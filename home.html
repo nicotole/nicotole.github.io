@@ -8,8 +8,13 @@
     <link href="http://fonts.cdnfonts.com/css/passero-one" rel="stylesheet">
     <title>FJ - Inicio</title>
 </head>
-<body>
+<body style="overflow:hidden;">
   <!--Should put styles on classes-->
+  
+  <div class="divSpinner" style="color: white;">
+    <span class="spinner"></span>
+    <h1 style="padding-top: 4em;" class="count"></h1>
+   </div>
       <ul id="navbar">
         <li id="logo"><a href="./home.html">FiumbiJuegos</a></li>
         <li style="float:right; padding-right: 20px;" id="hMenu"><a href="#menu"><span class="bar"></span>
@@ -17,20 +22,98 @@
             <span class="bar3"></span></a></li>
         <li style="float:right"><a href="./profile.html"><img src="./images/profileImage.png" id="profileImg" alt=""></a></li>
       </ul>
-      <div class="mainContainer">
-        <h3>Mis juegos</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore repudiandae doloribus reprehenderit at obcaecati animi sapiente deserunt dolores saepe quasi perspiciatis ipsam officiis neque nisi temporibus sit, et sed enim.</p>
-        <h3>Recomendados</h3>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur vitae reprehenderit non quia aliquid, ducimus consectetur? Obcaecati ut ea, dolor nam illo libero qui sunt ratione. Nobis dolore sapiente recusandae?</p>
-        <h3>Aventura</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur vel dolore tempore eveniet eos. Eveniet tenetur, minima modi reprehenderit adipisci fugiat reiciendis facere illum ut consequuntur mollitia eos ab architecto.</p>
-        <h3>Acción</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere nulla sint beatae reiciendis quos placeat atque. Nemo, asperiores necessitatibus! Aperiam explicabo corporis debitis voluptate sit excepturi eius autem neque deserunt?
+      <div class="mainContainer" style="padding-bottom: 3em;">
+       
+        <div class="firstSection">
+          <h3 style="margin-left: 2em; margin-top: 1.2em;">Mis juegos</h3>
+
+          <div style="padding-top: 1em;">
+
+            <div class="gameCard" style="border: solid 1px black; width: 20%; margin-left: 2.4em; display: inline-block;  vertical-align: top;">
+              <img src="./images/games/nier.png" alt="" style="width: 100%;">
+              <h4>Nier: Automata 4 en linea</h4>
+              <span>Special Edition</span>
+              <button style="width: 100%;  margin-top: auto;">Jugar</button>
+            </div>
+
+            <div class="gameCard" style="border: solid 1px black; width: 20%; margin-left: 2.4em; display: inline-block;  vertical-align: top;">
+              <img src="./images/games/andromeda.png" alt="" style="width: 100%;">
+              <h4>Mass Effect Andromeda</h4>
+              <span>Recruit Edition</span>
+              <button style="width: 100%;  margin-top: auto;">Jugar</button>
+            </div>
+
+            <div class="gameCard" style="border: solid 1px black; width: 20%; margin-left: 2.4em; display: inline-block;  vertical-align: top;">
+              <img src="./images/games/tombraider.png" alt="" style="width: 100%;">
+              <h4>Rise of Tomb Raider</h4>
+              <span>20 Aniversario</span>
+              <button style="width: 100%;  margin-top: auto;">Jugar</button>
+            </div>
+
+
+            <div class="gameCard" style="border: solid 1px black; width: 20%; margin-left: 2.4em; display: inline-block;  vertical-align: top;">
+              <img src="./images/games/gta.png" alt="" style="width: 100%;">
+              <h4>Grand Theft Auto</h4>
+              <span>Juego base</span>
+              <button style="width: 100%;  margin-top: auto;">Jugar</button>
+            </div>
+
+          </div>
+        </div>
+
+
+
+        <div class="secondSection">
+          <h3 style="margin-left: 2em; margin-top: 1.2em;">Sugerencias</h3>
+
+          <div style="padding-top: 1em;">
+
+            <div class="gameCard" style="border: solid 1px black; width: 20%; margin-left: 2.4em; display: inline-block;  vertical-align: top;">
+              <img src="./images/games/nier.png" alt="" style="width: 100%;">
+              <h4>Nier: Automata 4 en linea</h4>
+              <span>Special Edition</span>
+              <div style="width: 100%;">
+                <button style="margin-top: auto; position: relative; float: right; width: 60%">Comprar</button>
+                <span style="margin-top: 1em; position: relative; float: left; width: 40%">$ 15.00</span>
+              </div>
+              
+            </div>
+
+            <div class="gameCard" style="border: solid 1px black; width: 20%; margin-left: 2.4em; display: inline-block;  vertical-align: top;">
+              <img src="./images/games/andromeda.png" alt="" style="width: 100%;">
+              <h4>Mass Effect Andromeda</h4>
+              <span>Recruit Edition</span>
+              <button style="width: 100%;  margin-top: auto;">Jugar gratis</button>
+            </div>
+
+            <div class="gameCard" style="border: solid 1px black; width: 20%; margin-left: 2.4em; display: inline-block;  vertical-align: top;">
+              <img src="./images/games/nier.png" alt="" style="width: 100%;">
+              <h4>Nier: Automata 4 en linea</h4>
+              <span>Special Edition</span>
+              <div style="width: 100%;">
+                <button style="margin-top: auto; position: relative; float: right; width: 60%">Comprar</button>
+                <span style="margin-top: 1em; position: relative; float: left; width: 40%">$ 15.00</span>
+              </div>
+              
+            </div>
+
+
+            <div class="gameCard" style="border: solid 1px black; width: 20%; margin-left: 2.4em; display: inline-block;  vertical-align: top;">
+              <img src="./images/games/andromeda.png" alt="" style="width: 100%;">
+              <h4>Mass Effect Andromeda</h4>
+              <span>Recruit Edition</span>
+              <button style="width: 100%;  margin-top: auto;">Jugar gratis</button>
+            </div>
+
+          </div>
+        </div>
+
+      
       </div>
  
         <div style="padding-top: 2em; padding-bottom: 2em; background-color: #733E9C; padding-bottom: 0; color: whitesmoke;"> <!--All-->
           <div style="display: flex; text-align: left; margin: 4em;"> <!--First section-->
-            <div style="width: 50%; padding: 2em;">
+            <div style="width: 25%; padding: 2em;">
               <h3>Contacto</h3>
               <h4 style="color: orange;">¿Tienes preguntas?</h4>
               <p>¡Contáctanos!</p>
@@ -40,7 +123,7 @@
               <p>Promociona tu juego</p>
               <p>promo@fiumbijuegos.ar</p>
             </div>
-            <div style="width: 50%;  border-left: solid white;  padding: 2em;">
+            <div style="width: 25%;  border-left: solid white;  padding: 2em;">
               <h3>Nosotros</h3>
               <h4 style="color: orange;">Visita nuestra web</h4>
               <p>www.fiumbi.com</p>
@@ -50,19 +133,20 @@
               <br>
                <a href="">Condiciones de uso</a>
             </div>
-            <div style="width: 50%;  border-left: solid white;  padding: 2em;">
+            <div style="width: 25%;  border-left: solid white;  padding: 2em;">
               <h3>Síguenos</h3>
               <h4 style="color: orange;">Redes sociales</h4>
               <p>¡Mantente actualizado!</p>
               <div style="padding-top: 1rem;"><img style="height: 40px;" src="https://www.uno.edu/sites/default/files/inline-images/2021_Facebook_icon.svg_.png" alt=""> <img style="height: 40px;" src="https://www.uno.edu/sites/default/files/inline-images/2021_Facebook_icon.svg_.png" alt=""> <img style="height: 40px;" src="https://www.uno.edu/sites/default/files/inline-images/2021_Facebook_icon.svg_.png" alt=""> </div>
             </div>
-            <div style="width: 50%;  border-left: solid white; padding: 2em;">
+            <div style="width: 25%;  border-left: solid white; padding: 2em;">
               <h3>Newsletter</h3>
               <h4 style="color: orange;">Suscríbete</h4>
               <p>Para recibir las últimas novedades</p>
               <form action="/action_page.php">
                 <input type="text" id="fname" name="fname" placeholder="correo@correo.com"><br>
                 <button>Suscribirse</button>
+              </form>
             </div>
           </div>
         <div style="width: 100%; text-align: center; padding-top: 2em; padding-bottom: 3em; background-color: #612490;"><!--Second section-->
