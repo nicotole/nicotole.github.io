@@ -10,6 +10,7 @@
 
 
 #navbar {
+    width: 100%;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -42,17 +43,17 @@
  }
 
 button {
+  background-color: orange;
   padding: 0.8em 1.8em;
-  border: 2px solid #17C3B2;
+  border: 2px solid #F57B13;
   position: relative;
   overflow: hidden;
-  background-color: transparent;
   text-align: center;
   font-size: 16px;
   transition: .3s;
   z-index: 1;
   font-family: inherit;
-  color: #17C3B2;
+  color: white;
  }
  
  button::before {
@@ -63,7 +64,7 @@ button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
-  background: #17C3B2;
+  background: #F57B13;
   transition: .5s ease;
   display: block;
   z-index: -1;
@@ -74,7 +75,7 @@ button {
  }
  
  button:hover {
-  color: #111;
+  color: black;
   cursor: pointer;
  }
 
@@ -197,3 +198,87 @@ button {
   display: inline-block;
   vertical-align: top;
 }
+
+.releaseContainer{
+  width: 100%;
+  height: 35rem; /*IMPORTANT*/
+}
+
+.gameReleaseContainer{
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(./images/gamerelease/capa1.png);
+  text-align: center;
+  color: white;
+  background-color: black;
+}
+
+#gameReleaseContent{
+z-index: 9999;
+margin-left: 100vh;
+float: right;
+position: absolute;
+width: fit-content;
+margin-top: 18rem;
+
+}
+
+#gameReleaseImages{
+position: relative;
+float: left;
+}
+
+.layer1, .layer2, .layer3{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.layer1{
+ z-index: 1;
+}
+
+.layer2{
+  z-index: 2;
+}
+
+.layer3{
+  z-index: 3;
+}
+
+
+
+.gameReleaseImg{
+  height: 35rem;
+  width: 55rem;
+}
+
+.hr-div {
+  background-color:#4A1474;
+  height: 60px;
+  width: 100%;
+}
+
+.triangle-right {
+  margin-top: 2rem;
+  background-color:#4A1474;
+	/*width: 100%;*/
+	height: 0px;
+  border-bottom: 2px solid #36065A;
+	border-left: 30px solid #36065A;
+	border-top: 15px solid transparent;
+  
+  
+}
+
+.triangle-right1 {
+  background-color:#4A1474;
+	/*width: 100%;*/
+	height: 0px;
+  border-top: 2px solid #36065A;
+	border-left: 30px solid #36065A;
+	border-bottom: 15px solid transparent;
+}
+
