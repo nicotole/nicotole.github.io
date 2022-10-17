@@ -1,12 +1,12 @@
 //Working
 
-
+let hamburgerMenu = document.querySelector('.hamburgerNavbar');
 let body = document.querySelector('body');
 let counterNumber = document.querySelector('.count');
 let divSpinner = document.querySelector('.divSpinner');
 let done = false;
 let used = false;
-let time = 0; //In seconds
+let time = 5; //In seconds
 let count = 0; //Start number
 let target = 100-2; //Last number - fade
 let firstInterval = setInterval(counter, time*1000 / target); 
@@ -21,6 +21,7 @@ function counter(){
 
 setInterval(() => {
   if(done == false){
+    hamburgerMenu.style.display = "flex";
     body.style.overflow = "visible";                //Fade effect
     divSpinner.style.opacity = "0";             
     divSpinner.style.transition = "opacity 2s"
@@ -34,5 +35,10 @@ setInterval(() => {
     used = true;
   }
 }, time*1300);
+
+
+function suscribedAlert(){
+  alert('Usted recibirá las últimas novedades en su correo.');
+}
 
 

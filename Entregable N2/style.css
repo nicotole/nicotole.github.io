@@ -8,6 +8,10 @@
     letter-spacing: 1px;
 }
 
+body{
+  font-family: "Inter";
+  overflow:hidden;
+}
 
 #navbar {
     width: 100%;
@@ -34,6 +38,17 @@
     font-family: Passero One; 
   }
 
+.hamburgerNavbar{
+  display: none;
+  padding-bottom: 40px;
+}
+
+.profileNavbar{
+  float:right !important;
+  padding-right: 5rem; 
+  padding-top: 0.4%;
+}
+
  #profileImg{
     height: 2.3rem; 
  }
@@ -41,6 +56,10 @@
  #hMenu{
     padding-top: 3px;
  }
+
+.mainContainer{
+  padding-bottom: 3em;
+}
 
 .buttonViolet{
   background-color: #733E9C;
@@ -51,11 +70,12 @@
 }
 
 .buttonOrange{
-  background-color: #FE9A45;
+  border-radius: 8px;
+  background-color: #F57B13;
 }
 
 .buttonOrange::before{
-  background: #F57B13;
+  background: #cf6100;
 }
 
 .buttonGreen{
@@ -72,13 +92,16 @@ button {
   border: none;
   position: relative;
   overflow: hidden;
-  text-align: center;
   font-size: 16px;
   transition: .3s;
   z-index: 1;
   font-family: inherit;
   color: white;
  }
+
+ /*.buttonCard{
+    TO DO . BUTTON HAS TO BE ALWAYS IN BOTTOM POSITION 
+}*/
  
  button::before {
   content: '';
@@ -102,6 +125,25 @@ button {
   cursor: pointer;
  }
 
+ .buttonBuy{
+  margin-right: 5px;
+  float: right;
+  height: 8vh;
+  width: 8.5vw !important;
+  padding: 0.7em 1.2em; 
+ }
+
+ .buttonSusc{
+  float: right;
+ }
+
+ .gameCardGamePrice{
+  float: left;
+  font-size: medium;
+  padding-top: 1.3vh;
+  margin-left: 3px;
+ }
+
  .categoryTitle{
   margin-left: 2.3%;
   margin-top: 2%;
@@ -120,6 +162,7 @@ button {
 }
 
 .divSpinner{
+  color: white;
   width: 100%;
   height: 100%;
   background: #733E9C;
@@ -155,6 +198,10 @@ button {
 }
 }
 
+.count{
+  padding-top: 5em;
+}
+
 #meny {
   overflow: scroll;
   background: #733E9C;
@@ -177,6 +224,7 @@ button {
 }
 
 #burger {
+  float:right;
   position: absolute;
   cursor: pointer;
   width: 2rem;
@@ -197,6 +245,10 @@ button {
   z-index: 999;
 }
 
+#menyAvPaa:checked ~ #burger{
+  position: fixed;
+  z-index: 9999;
+}
 
 #menyAvPaa:checked ~ #burger div:nth-child(1) {
   transform: translateY(10px) rotate(45deg);
@@ -228,12 +280,14 @@ button {
 }
 
 .gameCard{
+  height: 45vh;
   width: 20vw;
   border: solid 1px grey;
   margin: 1.5%;
   flex-wrap: nowrap;
-  background-color: #CBD5E1;
+  background-color: whitesmoke;
 }
+
 
 .gameCard img{
   background-color: black;
@@ -253,6 +307,14 @@ button {
 
 .gameCardDescription button{
   width: 100%
+}
+
+.gameCardGameTitle{
+  color: #200534;
+}
+
+.gameCardGameSubtitle{
+  color: #94A3B8;
 }
 
 .releaseContainer{
@@ -338,3 +400,78 @@ float: left;
 	border-bottom: 15px solid transparent;
 }
 
+.footer{
+  padding-top: 5em;
+  background-color: #733E9C;
+  padding-bottom: 0;
+  color: #E2E8F0;
+}
+
+.firstSectionFooter{
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: no-wrap;
+  display: flex;
+  text-align: left;
+  margin: 4em;
+}
+
+.secondSectionFooter{
+  color: #94A3B8;
+  width: 100%;
+  margin-top: 18%;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  text-align: center;
+  background-color: #612490;
+}
+
+.footerRow{
+  height: 95px;
+  padding: 2%;
+  float: 25%;
+}
+
+.footerRow *{
+  margin-bottom: 6px;
+}
+
+.borderRow{
+  border-left: solid 1px #E2E8F0;
+}
+
+.colorhfooter{
+  color: #FE9A45 !important;
+}
+
+.footerRowTitle{
+  padding-top: 3vh;
+  font-size: x-large;
+}
+
+.footerLink{
+  color: #E2E8F0;
+}
+
+.footerLink:hover{
+  color: #612490;
+}
+
+.buttonSusc{
+  padding: 0.7em 1.2em !important; 
+}
+
+.footerSocialMediaIcons{
+  padding-top: 0.5rem;
+  text-align: center;
+  padding-right: 35px;
+}
+
+.footerSocialMediaIcons img{
+  height: 30px;
+}
+
+.footerInput{
+  width: 100%;
+  height:4.3vh
+}

@@ -6,26 +6,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
   <link href="http://fonts.cdnfonts.com/css/passero-one" rel="stylesheet">
   <title>FJ - Inicio</title>
 </head>
 
-<body style="overflow:hidden;">
-  <!--Should put styles on classes-->
+<body>
 
-  <div class="divSpinner" style="color: white;">
+  <div class="divSpinner">
     <span class="spinner"></span>
-    <div style="padding-top: 5em;" class="count"></div>
+    <div class="count"></div>
   </div>
-
 
   <ul id="navbar">
     <li id="logo"><a href="./home.html">FiumbiJuegos</a></li>
-    <li style="float:right; padding-right: 5rem; padding-top: 0.4%;"><a href="./profile.html"><img
-          src="./images/profileImage.png" id="profileImg" alt=""></a></li>
-    <li style="padding-bottom: 40px">
+    <li class="profileNavbar"><a href="./profile.html">
+      <img src="./images/profileImage.png" id="profileImg" alt=""></a></li>
+    <li class="hamburgerNavbar">
       <input type="checkbox" id="menyAvPaa">
-      <label id="burger" style="float:right;" for="menyAvPaa">
+      <label id="burger" for="menyAvPaa">
         <div></div>
         <div></div>
         <div></div>
@@ -48,90 +47,93 @@
   </ul>
 
 
-  <div class="mainContainer" style="padding-bottom: 3em;">
+  <div class="mainContainer">
     <h2 class="categoryTitle">Mis juegos</h2>
     <div class="firstSection">
         <div class="gameCard">
           <img src="./images/games/nier.png" alt="">
           <div class="gameCardDescription">
-            <h4>Nier: Automata 4 en linea</h4>
-            <h5>Special Edition</h5>
-            <button class="buttonViolet">Jugar</button>
+            <h4 class="gameCardGameTitle">Nier: Automata 4 en linea</h4>
+            <h5 class="gameCardGameSubtitle">Special Edition</h5>
+            <button class="buttonViolet buttonCard">Jugar</button>
           </div>
         </div>
         <div class="gameCard">
           <img src="./images/games/andromeda.png" alt="">
           <div class="gameCardDescription">
-            <h4>Mass Effect Andromeda</h4>
-            <h5>Recruit Edition</h5>
-            <button class="buttonViolet">Jugar</button>
+            <h4 class="gameCardGameTitle">Mass Effect Andromeda</h4>
+            <h5 class="gameCardGameSubtitle">Recruit Edition</h5>
+            <button class="buttonViolet buttonCard">Jugar</button>
           </div>
         </div>
         <div class="gameCard">
           <img src="./images/games/tombraider.png" alt="">
           <div class="gameCardDescription">
-            <h4>Rise of the Tomb Raider</h4>
-            <h5>20 Aniversary</h5>
-            <button class="buttonViolet">Jugar</button>
+            <h4 class="gameCardGameTitle">Rise of the Tomb Raider</h4>
+            <h5 class="gameCardGameSubtitle">20 Aniversary</h5>
+            <button class="buttonViolet buttonCard">Jugar</button>
           </div>
         </div>
         <div class="gameCard">
           <img src="./images/games/gta.png" alt="">
           <div class="gameCardDescription">
-            <h4>Gran Theft Auto</h4>
-            <h5>Special Edition</h5>
-            <button class="buttonViolet">Jugar</button>
+            <h4 class="gameCardGameTitle">Gran Theft Auto</h4>
+            <h5 class="gameCardGameSubtitle">Special Edition</h5>
+            <button class="buttonViolet buttonCard">Jugar</button>
           </div>
         </div>
         <div class="gameCard">
-          <img src="./images/games/nier.png" alt="">
+          <img src="./images/games/nierreplicant.png" alt="">
           <div class="gameCardDescription">
-            <h4>Nier: Automata 4 en linea</h4>
-             <h5>Special Edition</h5>
-            <button class="buttonViolet">Jugar</button>
+            <h4 class="gameCardGameTitle">Nier Replicant</h4>
+             <h5 class="gameCardGameSubtitle">White Snow Edition</h5>
+            <button class="buttonViolet buttonCard">Jugar</button>
           </div>
         </div> 
+        
     </div>
     <h2 class="categoryTitle">Sugerencias</h2>
     <div class="firstSection">
         <div class="gameCard">
           <img src="./images/games/fortnite.png" alt="">
           <div class="gameCardDescription">
-            <h4>Fortnite</h4>
-            <h5>Base game</h5>
-            <button class="buttonGreen">Jugar gratis</button>
+            <h4 class="gameCardGameTitle">Fortnite</h4>
+            <h5 class="gameCardGameSubtitle">Base game</h5>
+            <button class="buttonGreen buttonCard">Jugar gratis</button>
           </div>
         </div>
         <div class="gameCard">
           <img src="./images/games/assasincreed.png" alt="">
           <div class="gameCardDescription">
-            <h4>Assassins Creed Mirage</h4>
-            <h5>Standard Edition</h5>
-            <button class="buttonOrange">Comprar</button>
+            <h4 class="gameCardGameTitle">Assassins Creed Mirage</h4>
+            <h5 class="gameCardGameSubtitle">Standard Edition</h5>
+            <p class="gameCardGamePrice">$15.00</p>
+            <button class="buttonOrange buttonCard buttonBuy">Comprar</button>
           </div>
         </div>
         <div class="gameCard">
-          <img src="./images/games/nier.png" alt="">
+          <img src="./images/games/nierreplicant.png" alt="">
           <div class="gameCardDescription">
-            <h4>NieR Replicant</h4>
-            <h5>Collectors edition 10 years aniversary</h5>
-            <button class="buttonGreen">Jugar gratis</button>
+            <h4 class="gameCardGameTitle">NieR Replicant</h4>
+            <h5 class="gameCardGameSubtitle">Collectors edition 10 years aniversary</h5>
+            <button class="buttonGreen buttonCard">Jugar gratis</button>
           </div>
         </div>
         <div class="gameCard">
           <img src="./images/games/amongus.png" alt="">
           <div class="gameCardDescription">
-            <h4>Among Us</h4>
-            <h5>Base game</h5>
-            <button class="buttonOrange">Comprar</button>
+            <h4 class="gameCardGameTitle">Among Us</h4>
+            <h5 class="gameCardGameSubtitle">Base game</h5>
+            <p class="gameCardGamePrice">$20.00</p>
+            <button class="buttonOrange buttonCard buttonBuy">Comprar</button>
           </div>
         </div>
         <div class="gameCard">
-          <img src="./images/games/nier.png" alt="">
+          <img src="./images/games/nierreplicant.png" alt="">
           <div class="gameCardDescription">
-            <h4>Nier: Automata 4 en linea</h4>
-             <h5>Special Edition</h5>
-             <button class="buttonGreen">Jugar gratis</button>
+            <h4 class="gameCardGameTitle">Celeste</h4>
+             <h5 class="gameCardGameSubtitle">Special Edition</h5>
+             <button class="buttonGreen buttonCard">Jugar gratis</button>
           </div>
         </div>
     </div>
@@ -140,41 +142,44 @@
         <div class="gameCard">
           <img src="./images/games/madden.png" alt="">
           <div class="gameCardDescription">
-            <h4>Madden 2022</h4>
-            <h5>Base game</h5>
-            <button class="buttonOrange">Comprar</button>
+            <h4 class="gameCardGameTitle">Madden 2022</h4>
+            <h5 class="gameCardGameSubtitle">Base game</h5>
+            <p class="gameCardGamePrice">$500.00</p>
+            <button class="buttonOrange buttonCard buttonBuy">Comprar</button>
           </div>
         </div>
         <div class="gameCard">
           <img src="./images/games/pgatour.png" alt="">
           <div class="gameCardDescription">
-            <h4>PGA TOUR 2K21</h4>
-            <h5>Standard Edition</h5>
-            <button class="buttonGreen">Jugar gratis</button>
+            <h4 class="gameCardGameTitle">PGA TOUR 2K21</h4>
+            <h5 class="gameCardGameSubtitle">Standard Edition</h5>
+            <button class="buttonGreen buttonCard">Jugar gratis</button>
           </div>
         </div>
         <div class="gameCard">
           <img src="./images/games/f12022.png" alt="">
           <div class="gameCardDescription">
-            <h4>F1 2022</h4>
-            <h5>Base game</h5>
-            <button class="buttonOrange">Comprar</button>
+            <h4 class="gameCardGameTitle">F1 2022</h4>
+            <h5 class="gameCardGameSubtitle">Base game</h5>
+            <p class="gameCardGamePrice">$5.00</p>
+            <button class="buttonOrange buttonCard buttonBuy">Comprar</button>
           </div>
         </div>
         <div class="gameCard">
           <img src="./images/games/skate4.png" alt="">
           <div class="gameCardDescription">
-            <h4>Skate 4</h4>
-            <h5>Base game</h5>
-            <button class="buttonGreen">Jugar gratis</button>
+            <h4 class="gameCardGameTitle">Skate 4</h4>
+            <h5 class="gameCardGameSubtitle">Base game</h5>
+            <p class="gameCardGamePrice">$200.00</p>
+            <button class="buttonOrange buttonCard buttonBuy">Comprar</button>
           </div>
         </div>
         <div class="gameCard">
           <img src="./images/games/nier.png" alt="">
           <div class="gameCardDescription">
-            <h4>Nier: Automata 4 en linea</h4>
-             <h5>Special Edition</h5>
-             <button class="buttonOrange">Comprar</button>
+            <h4 class="gameCardGameTitle">Nier: Automata 4 en linea</h4>
+             <h5 class="gameCardGameSubtitle">Special Edition</h5>
+             <button class="buttonGreen buttonCard">Jugar gratis</button>
           </div>
         </div> 
     </div>
@@ -182,13 +187,13 @@
 
 
 
-  <div style="padding-top: 2em; padding-bottom: 2em; background-color: #733E9C; padding-bottom: 0; color: whitesmoke;">
+  <div class="footer">
     <!--All-->
-    <div style="display: flex; text-align: left; margin: 4em;">
+    <div class="firstSectionFooter">
       <!--First section-->
-      <div style="width: 20%; padding: 2em;">
-        <h3>Contacto</h3>
-        <h4 style="color: orange;">¿Tienes preguntas?</h4>
+      <div class="footerRow">
+        <p class="footerRowTitle">Contacto</p>
+        <p class="colorhfooter">¿Tienes preguntas?</p>
         <p>¡Contáctanos!</p>
         <p>contacto@fiumbijuegos.ar</p>
         <p>¡Trabaja con nosotros!</p>
@@ -196,40 +201,39 @@
         <p>Promociona tu juego</p>
         <p>promo@fiumbijuegos.ar</p>
       </div>
-      <div style="width: 20%;  border-left: solid white;  padding: 2em;">
-        <h3>Nosotros</h3>
-        <h4 style="color: orange;">Visita nuestra web</h4>
+      <div class="footerRow borderRow">
+        <p class="footerRowTitle">Nosotros</p>
+        <p class="colorhfooter">Visita nuestra web</p>
         <p>www.fiumbi.com</p>
-        <a href="">Centro de ayuda</a>
+        <a class="footerLink" href="">Centro de ayuda</a>
         <br>
-        <a href="">Privacidad</a>
+        <a class="footerLink" href="">Privacidad</a>
         <br>
-        <a href="">Condiciones de uso</a>
+        <a class="footerLink" href="">Condiciones de uso</a>
       </div>
-      <div style="width: 20%;  border-left: solid white;  padding: 2em;">
-        <h3>Síguenos</h3>
-        <h4 style="color: orange;">Redes sociales</h4>
+      <div class="footerRow borderRow">
+        <p class="footerRowTitle">Síguenos</p>
+        <p  class="colorhfooter">Redes sociales</p>
         <p>¡Mantente actualizado!</p>
-        <div style="padding-top: 1rem;"><img style="height: 40px;"
-            src="https://www.uno.edu/sites/default/files/inline-images/2021_Facebook_icon.svg_.png" alt=""> <img
-            style="height: 40px;"
-            src="https://www.uno.edu/sites/default/files/inline-images/2021_Facebook_icon.svg_.png" alt=""> <img
-            style="height: 40px;"
-            src="https://www.uno.edu/sites/default/files/inline-images/2021_Facebook_icon.svg_.png" alt=""> </div>
+          <div class="footerSocialMediaIcons">
+            <a href=""><img src="./images/social/facebook.png" alt=""></a>
+            <a href=""><img src="./images/social/twitter.png" alt=""></a>
+            <a href=""><img src="./images/social/tiktok.png" alt=""></a>
+          </div>
       </div>
-      <div style="width: 20%;  border-left: solid white; padding: 2em;">
-        <h3>Newsletter</h3>
-        <h4 style="color: orange;">Suscríbete</h4>
+      <div class="footerRow borderRow">
+        <p class="footerRowTitle">Newsletter</p>
+        <p  class="colorhfooter">Suscríbete</p>
         <p>Para recibir las últimas novedades</p>
-        <form action="/action_page.php">
-          <input type="text" id="fname" name="fname" placeholder="correo@correo.com"><br>
-          <button class="buttonOrange">Suscribirse</button>
+        <form action="./home.html">
+          <input class="footerInput" type="text" placeholder="correo@correo.com"><br>
+          <button class="buttonOrange buttonSusc" onclick="suscribedAlert()">Suscribirse</button>
         </form>
       </div>
     </div>
-    <div style="width: 100%; text-align: center; padding-top: 2em; padding-bottom: 3em; background-color: #612490;">
+    <div class="secondSectionFooter">
       <!--Second section-->
-      <h3>FIUMBIJUEGOS.COM © 2022 All rights reserved</h3>
+      <p>FIUMBIJUEGOS.COM © 2022 All rights reserved</p>
     </div>
   </div>
 
