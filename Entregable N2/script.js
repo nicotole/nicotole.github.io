@@ -8,15 +8,15 @@ let done = false;
 let used = false;
 let time = 5; //In seconds
 let count = 0; //Start number
-let target = 100-2; //Last number - fade
+let target = 100; //Last number
 let firstInterval = setInterval(counter, time*1000 / target); 
 
 function counter(){
-  if(count > target){
+  if(count >= target){
       clearInterval(firstInterval);     //Counter logic
   }
-  count++;
   counterNumber.innerHTML = count;
+  count++;
 }
 
 setInterval(() => {
