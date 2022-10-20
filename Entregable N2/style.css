@@ -479,9 +479,7 @@ float: left;
 
 
 .arrow-right,
-.arrow-left,
-.long-arrow-right,
-.long-arrow-left{
+.arrow-left{
   display: block;
   margin: 30px auto;
   width: 35px;
@@ -489,23 +487,10 @@ float: left;
   border-top: 4px solid #356E0A;
   border-left: 4px solid #356E0A;
 }
-.arrow-right,
-.long-arrow-right{
+.arrow-right{
  transform: rotate(135deg);
 }
 
-.arrow-left,
-.long-arrow-left{
+.arrow-left{
  transform: rotate(-45deg);
-}
-.long-arrow-right::after,
-.long-arrow-left::after{
-  content: "";
-  display: block;
-  width: 2px;
-  height: 45px;
-  background-color: #356E0A;
-  transform: rotate(-45deg) translate(15px, 4px);
-  left: 0;
-  top: 0;
 }
