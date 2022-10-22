@@ -211,8 +211,8 @@
     <div class="carouselGameRelease" style="background: #9262B6;
     box-shadow: inset 0px 100px 150px 10px rgba(0, 0, 0, 0.25), inset 0px 5px 10px rgba(0, 0, 0, 0.25), inset 0px -5px 10px rgba(0, 0, 0, 0.25); margin-left: 7vw; margin-right: 7vw;">
          <div class="cardGameRelease" style="margin-top:40px ;">
-          <div style="height: 400px; display: flex; flex-wrap: nowrap; align-items: center;">
-            <div class="arrow-left" style="float: left;"> 
+          <div class="card1">
+            <div class="arrow-left" style="float: left;" onclick="showPrevious(2)"> 
             </div>
             <div style="display: flex;">
               <div>
@@ -244,14 +244,88 @@
                 </div>
               </div>
             </div>
-            <div class="arrow-right">
+            <div class="arrow-right" onclick="showNext(1)">
+            </div>
+          </div>
+          <div class="card2" style="height: 400px; display: flex; flex-wrap: nowrap; align-items: center; display: none;">
+            <div class="arrow-left" style="float: left;" onclick="showPrevious(0)"> 
+            </div>
+            <div style="display: flex;">
+              <div>
+                <img src="./images/gamerelease/classMago.png" alt="" style="height: 330px;">
+              </div>
+              <div style="margin-left: 30px;">
+                <h2 style="color: #F8FAFC;">Mago</h2>
+                <p style="font-style: Italic; color: #CBD5E1; margin-left: 10px;">“La magia es el camino”</p>
+                <div class="classSkills" style="margin-top: 40px; display: flex; flex-direction: column;">
+                  <div class="skill1" style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <img src="./images/gamerelease/classMagoSkill1.png" alt="" style="height: 40px;">
+                    <div> 
+                      <h4 style="margin-left: 10px;">Golpe de agua</h4>
+                      <p style="width: 300px;  margin-left: 10px;">Invoca el poder del agua y castiga a tu enemigo.</p></div>
+                  </div>
+                  <div class="skill2" style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <img src="./images/gamerelease/classMagoSkill2.png" alt="" style="height: 40px;">
+                    <div> 
+                      <h4 style="margin-left: 10px;">Rendición al agua</h4>
+                      <p style="width: 300px;  margin-left: 10px;">Reduce la defensa 
+                        a tu enemigo.</p></div>
+                  </div>
+                  <div class="skill3" style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <img src="./images/gamerelease/classMagoSkill3.png" alt="" style="height: 40px;">
+                    <div> 
+                      <h4 style="margin-left: 10px;">Rayo solar</h4>
+                      <p style="width: 300px;  margin-left: 10px;">Invoca un poder
+                        divino.</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="arrow-right" onclick="showNext(2)">
+            </div>
+          </div>
+          <div class="card3" style="height: 400px; display: flex; flex-wrap: nowrap; align-items: center; display: none;">
+            <div class="arrow-left" style="float: left;" onclick="showPrevious(1)"> 
+            </div>
+            <div style="display: flex;">
+              <div>
+                <img src="./images/gamerelease/classClerigo.png" alt="" style="height: 330px;">
+              </div>
+              <div style="margin-left: 30px;">
+                <h2 style="color: #F8FAFC;">Clerigo</h2>
+                <p style="font-style: Italic; color: #CBD5E1; margin-left: 10px;">“Ninguna herida puede detenerte”</p>
+                <div class="classSkills" style="margin-top: 40px; display: flex; flex-direction: column;">
+                  <div class="skill1" style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <img src="./images/gamerelease/classClerigoSkill1.png" alt="" style="height: 40px;">
+                    <div> 
+                      <h4 style="margin-left: 10px;">Curación</h4>
+                      <p style="width: 300px;  margin-left: 10px;">Cura a ti o a un aliado por 400HP.</p></div>
+                  </div>
+                  <div class="skill2" style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <img src="./images/gamerelease/classClerigoSkill2.png" alt="" style="height: 40px;">
+                    <div> 
+                      <h4 style="margin-left: 10px;">Última bendición</h4>
+                      <p style="width: 300px;  margin-left: 10px;">Cura completamente
+                        si se llega a 25% de
+                        vida.</p></div>
+                  </div>
+                  <div class="skill3" style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <img src="./images/gamerelease/classClerigoSkill3.png" alt="" style="height: 40px;">
+                    <div> 
+                      <h4 style="margin-left: 10px;">Resurreción</h4>
+                      <p style="width: 300px;  margin-left: 10px;">Revive a un aliado.</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="arrow-right" onclick="showNext(0)">
             </div>
           </div>
           </div>
           <div style="width: 100%; display: flex; justify-content:center;">
-            <span style=" border-top: 4px solid #36065A; display:inline-block; width: 3%; margin-bottom: 30px; margin: 10px;" ></span>
-            <span style=" border-top: 4px solid #612490; display:inline-block; width: 3%; margin-bottom: 30px; margin: 10px;" ></span>
-            <span style=" border-top: 4px solid #612490; display:inline-block; width: 3%; margin-bottom: 30px; margin: 10px;" ></span>
+            <span class="span1" style=" border-top: 4px solid #36065A; display:inline-block; width: 3%; margin-bottom: 30px; margin: 10px;" ></span>
+            <span  class="span2" style=" border-top: 4px solid #612490; display:inline-block; width: 3%; margin-bottom: 30px; margin: 10px;" ></span>
+            <span class="span3" style=" border-top: 4px solid #612490; display:inline-block; width: 3%; margin-bottom: 30px; margin: 10px;" ></span>
         </div>
     </div>  
   </div>
@@ -333,7 +407,7 @@
     </div>
   </div>
 
-
+  <script src="scriptGameRelease.js"></script>
 </body>
 
 </html>

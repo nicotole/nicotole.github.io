@@ -481,6 +481,7 @@ float: left;
 .arrow-right,
 .arrow-left{
   display: block;
+  cursor:pointer;
   margin: 30px auto;
   width: 35px;
   height: 35px;
@@ -493,4 +494,12 @@ float: left;
 
 .arrow-left{
  transform: rotate(-45deg);
+}
+
+
+.card1{
+  height: 400px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
 }
