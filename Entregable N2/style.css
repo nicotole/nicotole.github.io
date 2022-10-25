@@ -133,7 +133,7 @@ button {
   margin-right: 5px;
   float: right;
   height: 8vh;
-  width: 8.5vw !important;
+  width: 8.5vw;
   padding: 0.7em 1.2em; 
  }
 
@@ -628,6 +628,41 @@ float: left;
 @media (max-width: 768px) {
   .card-container {
     width: 184px;
+  }
+  .gameCard{
+    width: 100%;
+    height: 95%;
+  }
+  .buttonBuy{
+    float:left;
+    width: 60%;
+  }
+  .footerRow{
+    height: 250px;
+    flex-direction: column;
+  }
+  .firstSectionFooter{
+    justify-content: unset;
+  }
+  .borderRow{
+    border-left: none;
+  }
+  .carousel-buttons button{
+    top: -6% !important;
+    height: 40px !important;
+  }
+
+  .next{
+    left: 85% !important;
+  }
+  
+  .prev{
+    left: 0% !important;
+  }
+
+  .profileNavbar{
+    padding-right: 0;
+    padding-top: 11.4%;
   }
 }
 .card {
