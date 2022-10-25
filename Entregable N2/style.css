@@ -78,6 +78,13 @@ body{
   background: #cf6100;
 }
 
+.buttonShadow{
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+     -moz-box-shadow: 0 10px 6px -6px #777;
+          box-shadow: 0 10px 6px -6px #777;
+}
+
+
 .buttonGreen{
   background-color: #6FAC40;
 }
@@ -99,9 +106,6 @@ button {
   color: white;
  }
 
- /*.buttonCard{
-    TO DO . BUTTON HAS TO BE ALWAYS IN BOTTOM POSITION 
-}*/
  
  button::before {
   content: '';
@@ -271,6 +275,80 @@ button {
  color: #612490;
 }
 
+.gameReleaseH1{
+  text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+}
+
+.gameReleaseH2{
+  text-align: center; color:white;
+}
+
+.gameReleaseFeatures{
+  display: flex; justify-content:center; 
+  align-items: center; width: 100%;
+}
+
+.gameReleaseCard{
+  float: 50%; height: 45vh;
+  width: 23vw; text-align: left; margin-right: 2vw;
+}
+
+.releaseImage{
+  position: relative; height: 200px; width: 100%; top: 50px; z-index: -9999;
+}
+
+.divDegrade{
+  z-index: 9999; background-color:rgba(54, 6, 90, 0.5); height: 40px;
+}
+
+.cardReleaseTitle{
+  margin-left: 20px; padding-top: 8px;
+}
+
+.gameReleaseCardDescription{
+  background: #733E9C;
+  box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.5), inset 0px 20px 150px 10px rgba(0, 0, 0, 0.25);  border-bottom-left-radius: 30px; border-bottom-right-radius: 30px; height: 200px;
+}
+
+.cardReleaseText{
+  font-size: 0.9em; margin-left: 20px; margin-right: 25px; padding-top: 10px;
+}
+
+.carouselGameRelease{
+  background: #9262B6;
+    box-shadow: inset 0px 100px 150px 10px rgba(0, 0, 0, 0.25), inset 0px 5px 10px rgba(0, 0, 0, 0.25), inset 0px -5px 10px rgba(0, 0, 0, 0.25); margin-left: 7vw; margin-right: 7vw;
+}
+
+.cardGameReleaseDiv{
+  margin-top:40px ;
+}
+
+.className{
+  color: #F8FAFC;
+}
+
+.span1, .span2, .span3{
+  display:inline-block; width: 3%; margin-bottom: 30px; margin: 10px;
+}
+
+.span1{
+  border-top: 4px solid #36065A; 
+}
+
+.span2, .span3{
+  border-top: 4px solid #612490; 
+}
+
+.historiaBackground{
+  background: #733E9C;
+ box-shadow: inset 0px 100px 150px 10px rgba(0, 0, 0, 0.25); margin-top: 5vh;
+}
+
+.historiaTitle{
+  padding-top: 8vh; margin-left: 9vw;  border-bottom: 4px solid #36065A; padding-bottom: 10px;
+}
+
+
 .firstSection{
   display: flex;
   justify-content: center; 
@@ -318,8 +396,21 @@ button {
 }
 
 .releaseContainer{
+  color: #E2E8F0; 
   width: 100%;
   height: 35rem; /*IMPORTANT*/
+}
+
+.firstContainer{
+  height: 28rem !important;
+}
+
+.secondContainer{
+  height: 30rem !important;
+}
+
+.cardImg{
+  height: 30vh;
 }
 
 .gameReleaseContainer{
@@ -359,6 +450,7 @@ float: left;
 }
 
 .layer2{
+
   z-index: 2;
 }
 
@@ -410,10 +502,11 @@ float: left;
 .firstSectionFooter{
   justify-content: center;
   align-items: flex-start;
-  flex-wrap: no-wrap;
+  flex-wrap: wrap;
   display: flex;
   text-align: left;
   margin: 4em;
+  /* flex-direction: column; */
 }
 
 .secondSectionFooter{
@@ -427,7 +520,7 @@ float: left;
 }
 
 .footerRow{
-  height: 95px;
+  height: 95px; /*Borrar en mobile*/
   padding: 2%;
   float: 25%;
 }
@@ -559,8 +652,10 @@ float: left;
   height: 60px;
   border-radius: 50%;
   outline: none;
-  border: 1px solid #000;
   cursor: pointer;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+     -moz-box-shadow: 0 10px 6px -6px #777;
+          box-shadow: 0 10px 6px -6px #777;
 }
 .carousel-buttons .prev {
   left: -30px;
@@ -575,3 +670,33 @@ float: left;
 .carousel-buttons .next.hide {
   display: none;
 }
+
+.triangle-left2,
+.triangle-right2{
+  width: 0;
+  height: 0px;
+  margin: 0px;
+}
+.triangle-left2,
+.triangle-right2{
+  border-top:
+    8px solid #F0F0F0;
+  border-bottom:
+    8px solid #F0F0F0;
+  
+}
+
+.triangle-right2{
+  border-left:
+    10px solid grey;
+}
+.triangle-left2{
+  border-right:
+    10px solid grey;
+}
+
+.gameReleaseH{
+  margin-bottom: 0.5em; text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+}
+
+
