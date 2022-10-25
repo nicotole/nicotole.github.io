@@ -8,6 +8,130 @@
     letter-spacing: 1px;
 }
 
+
+body{
+    font-family: "Inter";
+    color: #612490;
+}
+
+#navbar {
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #733E9C;
+  }
+  
+  #navbar li {
+    float: left;
+  }
+  
+  #navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    margin: 2px 30px;
+  }
+  
+  #logo{
+    font-size: 33px;
+    font-family: Passero One; 
+  }
+
+.hamburgerNavbar{
+  /* display: none; */
+  padding-bottom: 40px;
+}
+
+.profileNavbar{
+  float:right !important;
+  padding-right: 5rem; 
+  padding-top: 0.4%;
+}
+
+ #profileImg{
+    height: 2.3rem; 
+ }
+
+ #hMenu{
+    padding-top: 3px;
+ }
+
+ #meny {
+    overflow: scroll;
+    background: #733E9C;
+    width: 20rem;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    transform: translateX(50rem);
+    top: 0;
+    z-index: 100;
+    transition: 0.5s;
+  }
+  
+  #menyAvPaa {
+    display: none;
+  }
+  
+  #menyAvPaa:checked ~ #meny {
+    transform: translateX(0rem);
+  }
+  
+  #burger {
+    float:right;
+    position: absolute;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    right: 3rem;
+    top: 0.4rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #burger div {
+    width: 50px;
+    height: 3px;
+    margin-top: 7px !important;
+    background-color: white;
+    display:block;
+    transition: 0.5s;
+    z-index: 999;
+  }
+  
+  #menyAvPaa:checked ~ #burger{
+    position: fixed;
+    z-index: 9999;
+  }
+  
+  #menyAvPaa:checked ~ #burger div:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+  #menyAvPaa:checked ~ #burger div:nth-child(2) {
+    opacity: 0;
+  }
+  #menyAvPaa:checked ~ #burger div:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+  
+  #meny a {
+    float: left;
+    font-size: 1.2rem;
+    padding: 1rem;
+    display: block;
+  }
+  
+  #meny a:hover {
+   color: #612490;
+  } */
+
+
+*/
+
+
+
 body{
     font-family: "Inter";
     color: #612490;
@@ -440,3 +564,5 @@ article.info-card button{
         "content recomendation-sidebar"
     ;
 } */
+
+
