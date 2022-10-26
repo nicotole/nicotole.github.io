@@ -735,3 +735,22 @@ float: left;
 }
 
 
+@media (min-width: 1919px) {
+  .carousel-container{
+    width: 1400px; 
+    margin: 50px;
+    margin-left: 6%;
+  }
+
+  .card-container{
+    width: auto;
+  }
+
+  .inner-carousel{
+    height: 650px;
+  }
+
+  .carousel-buttons buttons{
+    top: 32%; 
+  }
+}
