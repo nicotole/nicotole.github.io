@@ -735,3 +735,12 @@ float: left;
 }
 
 
+@media (max-width: 1920px) {
+  .card-container{
+    width: auto;
+  }
+
+  .inner-carousel{
+    height: 650px;
+  }
+}
