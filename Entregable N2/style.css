@@ -11,7 +11,9 @@
 body{
   font-family: "Inter";
   overflow:hidden;
+  color: #612490;
 }
+
 
 #navbar {
     width: 100%;
@@ -360,10 +362,10 @@ button {
 .gameCard{
   height: 55vh;
   width: 20vw;
-  border: solid 1px grey;
+  border: solid 1px #CBD5E1;
   margin: 1.5%;
   flex-wrap: nowrap;
-  background-color: whitesmoke;
+  background-color: #FFFFFF;
 }
 
 
@@ -388,11 +390,14 @@ button {
 }
 
 .gameCardGameTitle{
-  color: #200534;
+  /* color: #200534; */
+  font-weight: bold;
 }
 
 .gameCardGameSubtitle{
   color: #94A3B8;
+  font-weight: lighter;
+  font-family: "Inter";
 }
 
 .releaseContainer{
@@ -512,7 +517,7 @@ float: left;
 .secondSectionFooter{
   color: #94A3B8;
   width: 100%;
-  margin-top: 18%;
+  margin-top: 30%;
   padding-top: 5vh;
   padding-bottom: 5vh;
   text-align: center;
@@ -753,4 +758,12 @@ float: left;
   .carousel-buttons buttons{
     top: 32%; 
   }
+}
+
+.footerRow p{
+  padding: 0%;
+}
+
+.spaced{
+  margin-top: 10%;
 }
