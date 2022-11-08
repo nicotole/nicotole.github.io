@@ -134,9 +134,10 @@ button {
  .buttonBuy{
   margin-right: 5px;
   float: right;
-  height: 8vh;
+  height: 7vh;
   width: 8.5vw;
   padding: 0.7em 1.2em; 
+
  }
 
  .buttonSusc{
@@ -148,10 +149,11 @@ button {
   font-size: medium;
   padding-top: 1.3vh;
   margin-left: 3px;
+  color: black;
  }
 
  .categoryTitle{
-  margin-left: 2.3%;
+  margin-left: 9%;
   margin-top: 2%;
  }
 
@@ -517,7 +519,7 @@ float: left;
 .secondSectionFooter{
   color: #94A3B8;
   width: 100%;
-  margin-top: 30%;
+  margin-top: 10%;
   padding-top: 5vh;
   padding-bottom: 5vh;
   text-align: center;
@@ -630,13 +632,32 @@ float: left;
   flex-shrink: 0;
   padding-right: 10px;
 }
+
+
+.footer-row-box{
+  border-left:  solid 1px #E2E8F0;
+  padding-left: 2%;
+  padding-right: 2%;
+  height: 400px;
+}
+
 @media (max-width: 768px) {
+  .categoryTitle{
+    margin-left: 4%;
+  }
+  .inner-carousel{
+    height: 300px;
+  }
   .card-container {
     width: 184px;
   }
   .gameCard{
     width: 100%;
-    height: 95%;
+    height: 70%;
+    /* background-color: red; */
+  }
+  .cardImg{
+    height: 20vh;
   }
   .buttonBuy{
     float:left;
@@ -647,7 +668,9 @@ float: left;
     flex-direction: column;
   }
   .firstSectionFooter{
-    justify-content: unset;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-around; */
   }
   .borderRow{
     border-left: none;
@@ -669,6 +692,33 @@ float: left;
     padding-right: 0;
     padding-top: 11.4%;
   }
+  .space-1{
+    height: 470px;
+  }
+  .space-2{
+    height: 370px;
+  }
+
+  .footer-columned{
+    margin-left: -29%;
+  }
+
+  .footer-columned-item{
+    margin-left: -20%
+  }
+
+  .footerSocialMediaIcons{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  
+.footer-row-box{
+  border-left:  solid 0px #E2E8F0;
+  padding-left: 0%;
+  padding-right: 0%;
+  height: 0px;
+}
 }
 .card {
   width: 100%;
