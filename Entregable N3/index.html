@@ -8,8 +8,71 @@
   <link rel="stylesheet" href="style.css">
   <title>Connect Four!</title>
 </head>
-<body>
-<h1>Connect Four</h1>
+<body style="background-image:url(./imagenes/menuBackground.jpg); background-repeat: no-repeat; background-size: cover;">
+
+  <div class="mainMenu" style="text-align:center; background-color: grey; margin: 50px;">
+    <h2>Menú</h2> 
+      Fichas para ganar
+      <select id="numberToWin">
+        <option value="4"> ● 4</option>
+        <option value="5"> ● 5</option>
+        <option value="6"> ● 6</option>
+      </select> 
+      <br><br>
+      Jugador 1
+      <input type="text" id="player1Name">
+      <select id="player1Skin">
+        <option value="red1"> 🔴 Rojo</option>
+        <option value="violet1" selected> 🟣 Violeta</option>
+        <option value="green1"> 🟢 Verde</option>
+        <option value="yellow1"> 🟡 Amarillo</option>
+        <option value="blue1"> 🔵 Azul</option>
+        <option value="halloween1"> 🎃 Halloween</option>
+        <option value="football1"> ⚽ Futbol</option>
+        <option value="cookie1"> 🍪 Galleta</option>
+        <option value="santa1"> 🎅 Santa</option>
+      </select> 
+      <br><br>
+      Jugador 2
+      <input type="text" id="player2Name">
+      <select id="player2Skin">
+        <option value="red2"> 🔴 Rojo</option>
+        <option value="violet2"> 🟣 Violeta</option>
+        <option value="green2"> 🟢 Verde</option>
+        <option value="yellow2"> 🟡 Amarillo</option>
+        <option value="blue2"> 🔵 Azul</option>
+        <option value="halloween2"> 🎃 Halloween</option>
+        <option value="football2"> ⚽ Futbol</option>
+        <option value="cookie2"> 🍪 Galleta</option>
+        <option value="santa2"> 🎅 Santa</option>
+      </select> 
+      <br><br>
+      <button onclick="startGame()">JUGAR</button>
+  </div>
+
+  <div class="gameScreen" style="display: none;">
+    <h1 id="titulo" style="color: white;">Comienza el juego</h1>
+    <button onClick="window.location.reload();">🡠 MENÚ</button>
+    <button type="button" id="btn-reset">REINICIAR JUEGO</button>
+    <h1 style="color: green; font-size: 70px; font-family: 'Courier New', Courier, monospace;" id="timer">---</h1>
+
+  <canvas id="canvas" width="900" height="600"></canvas>
+  <div style="display: flex; justify-content: center;">
+      <img id="leftArrow" src="./imagenes/leftArrow.png" alt="" style="height: 100px;">
+      <img id="rightArrow" src="./imagenes/rightArrow.png" alt="" style="height: 100px; display: none;">
+  </div>
+  <div style="display: flex; justify-content: center; width: 100%;  background-color: #1E90FF;">
+    
+   
+     
+    <h1 style="display: inline-block;color: ghostwhite; font-family: 'Courier New', Courier, monospace;" class="nombreTurno"></h1>
+   
+  </div>   
+   
+  </div>
+
+
+<!-- <h1>Connect Four</h1>
 <div class="game-board">
   <div class="cell row-top col-0"></div>
   <div class="cell row-top col-1"></div>
@@ -42,7 +105,7 @@
 <div class="footer">
   <button class="reset">Reset</button>
   <span class="status"></span>
-</div>
+</div> -->
 <script src="app.js"></script>
 </body>
 </html>

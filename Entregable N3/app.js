@@ -1,297 +1,414 @@
-// DOM Elements
-const allCells = document.querySelectorAll('.cell:not(.row-top)');
-const topCells = document.querySelectorAll('.cell.row-top');
-const resetButton = document.querySelector('.reset');
-const statusSpan = document.querySelector('.status');
-
-// columns
-// const column0 = [allCells[35], allCells[28], allCells[21], allCells[14], allCells[7], allCells[0], topCells[0]];
-// const column1 = [allCells[36], allCells[29], allCells[22], allCells[15], allCells[8], allCells[1], topCells[1]];
-// const column2 = [allCells[37], allCells[30], allCells[23], allCells[16], allCells[9], allCells[2], topCells[2]];
-// const column3 = [allCells[38], allCells[31], allCells[24], allCells[17], allCells[10], allCells[3], topCells[3]];
-// const column4 = [allCells[39], allCells[32], allCells[25], allCells[18], allCells[11], allCells[4], topCells[4]];
-// const column5 = [allCells[40], allCells[33], allCells[26], allCells[19], allCells[12], allCells[5], topCells[5]];
-// const column6 = [allCells[41], allCells[34], allCells[27], allCells[20], allCells[13], allCells[6], topCells[6]];
-// const columns = [column0, column1, column2, column3, column4, column5, column6];
-
-const column0 = [allCells[14], allCells[7], allCells[0], topCells[0]];
-const column1 = [allCells[15], allCells[8], allCells[1], topCells[1]];
-const column2 = [allCells[16], allCells[9], allCells[2], topCells[2]];
-const column3 = [allCells[17], allCells[10], allCells[3], topCells[3]];
-const columns = [column0, column1, column2, column3];
-
-// rows
-// const topRow = [topCells[0], topCells[1], topCells[2], topCells[3], topCells[4], topCells[5], topCells[6]];
-// const row0 = [allCells[0], allCells[1], allCells[2], allCells[3], allCells[4], allCells[5], allCells[6]];
-// const row1 = [allCells[7], allCells[8], allCells[9], allCells[10], allCells[11], allCells[12], allCells[13]];
-// const row2 = [allCells[14], allCells[15], allCells[16], allCells[17], allCells[18], allCells[19], allCells[20]];
-// const row3 = [allCells[21], allCells[22], allCells[23], allCells[24], allCells[25], allCells[26], allCells[27]];
-// const row4 = [allCells[28], allCells[29], allCells[30], allCells[31], allCells[32], allCells[33], allCells[34]];
-// const row5 = [allCells[35], allCells[36], allCells[37], allCells[38], allCells[39], allCells[40], allCells[41]];
-// const rows = [row0, row1, row2, row3, row4, row5, topRow];
-
-const topRow = [topCells[0], topCells[1], topCells[2], topCells[3]];
-const row0 = [allCells[0], allCells[1], allCells[2], allCells[3]];
-const row1 = [allCells[7], allCells[8], allCells[9], allCells[10]];
-const row2 = [allCells[14], allCells[15], allCells[16], allCells[17]];
-const row3 = [allCells[21], allCells[22], allCells[23], allCells[24]];
-const rows = [row0, row1, row2, row3, topRow];
-
-
-// variables
-let gameIsLive = true;
-let yellowIsNext = true;
-
-
-// Functions
-const getClassListArray = (cell) => {
-  const classList = cell.classList;
-  return [...classList];
-};
-
-const getCellLocation = (cell) => {
-  const classList = getClassListArray(cell);
-
-  const rowClass = classList.find(className => className.includes('row'));
-  const colClass = classList.find(className => className.includes('col'));
-  const rowIndex = rowClass[4];
-  const colIndex = colClass[4];
-  const rowNumber = parseInt(rowIndex, 10);
-  const colNumber = parseInt(colIndex, 10);
-
-  return [rowNumber, colNumber];
-};
-
-const getFirstOpenCellForColumn = (colIndex) => {
-  const column = columns[colIndex];
-  const columnWithoutTop = column.slice(0, 6);
-
-  for (const cell of columnWithoutTop) {
-    const classList = getClassListArray(cell);
-    if (!classList.includes('yellow') && !classList.includes('red')) {
-      return cell;
-    }
-  }
-
-  return null;
-};
-
-const clearColorFromTop = (colIndex) => {
-  const topCell = topCells[colIndex];
-  topCell.classList.remove('yellow');
-  topCell.classList.remove('red');
-};
-
-const getColorOfCell = (cell) => {
-  const classList = getClassListArray(cell);
-  if (classList.includes('yellow')) return 'yellow';
-  if (classList.includes('red')) return 'red';
-  return null;
-};
-
-const checkWinningCells = (cells) => {
-  if (cells.length < 4) return false;
-
-  gameIsLive = false;
-  for (const cell of cells) {
-    cell.classList.add('win');
-  }
-  statusSpan.textContent = `${yellowIsNext ? 'Yellow' : 'Red'} has won!`
-  return true;
-};
-
-const checkStatusOfGame = (cell) => {
-  const color = getColorOfCell(cell);
-  if (!color) return;
-  const [rowIndex, colIndex] = getCellLocation(cell);
-
-  // Check horizontally
-  let winningCells = [cell];
-  let rowToCheck = rowIndex;
-  let colToCheck = colIndex - 1;
-  while (colToCheck >= 0) {
-    const cellToCheck = rows[rowToCheck][colToCheck];
-    if (getColorOfCell(cellToCheck) === color) {
-      winningCells.push(cellToCheck);
-      colToCheck--;
-    } else {
-      break;
-    }
-  }
-  colToCheck = colIndex + 1;
-  while (colToCheck <= 6) {
-    const cellToCheck = rows[rowToCheck][colToCheck];
-    if (getColorOfCell(cellToCheck) === color) {
-      winningCells.push(cellToCheck);
-      colToCheck++;
-    } else {
-      break;
-    }
-  }
-  let isWinningCombo = checkWinningCells(winningCells);
-  if (isWinningCombo) return;
-
-
-  // Check vertically
-  winningCells = [cell];
-  rowToCheck = rowIndex - 1;
-  colToCheck = colIndex;
-  while (rowToCheck >= 0) {
-    const cellToCheck = rows[rowToCheck][colToCheck];
-    if (getColorOfCell(cellToCheck) === color) {
-      winningCells.push(cellToCheck);
-      rowToCheck--;
-    } else {
-      break;
-    }
-  }
-  rowToCheck = rowIndex + 1;
-  while (rowToCheck <= 5) {
-    const cellToCheck = rows[rowToCheck][colToCheck];
-    if (getColorOfCell(cellToCheck) === color) {
-      winningCells.push(cellToCheck);
-      rowToCheck++;
-    } else {
-      break;
-    }
-  }
-  isWinningCombo = checkWinningCells(winningCells);
-  if (isWinningCombo) return;
-
-
-  // Check diagonally /
-  winningCells = [cell];
-  rowToCheck = rowIndex + 1;
-  colToCheck = colIndex - 1;
-  while (colToCheck >= 0 && rowToCheck <= 5) {
-    const cellToCheck = rows[rowToCheck][colToCheck];
-    if (getColorOfCell(cellToCheck) === color) {
-      winningCells.push(cellToCheck);
-      rowToCheck++;
-      colToCheck--;
-    } else {
-      break;
-    }
-  }
-  rowToCheck = rowIndex - 1;
-  colToCheck = colIndex + 1;
-  while (colToCheck <= 6 && rowToCheck >= 0) {
-    const cellToCheck = rows[rowToCheck][colToCheck];
-    if (getColorOfCell(cellToCheck) === color) {
-      winningCells.push(cellToCheck);
-      rowToCheck--;
-      colToCheck++;
-    } else {
-      break;
-    }
-  }
-  isWinningCombo = checkWinningCells(winningCells);
-  if (isWinningCombo) return;
-
-
-  // Check diagonally \
-  winningCells = [cell];
-  rowToCheck = rowIndex - 1;
-  colToCheck = colIndex - 1;
-  while (colToCheck >= 0 && rowToCheck >= 0) {
-    const cellToCheck = rows[rowToCheck][colToCheck];
-    if (getColorOfCell(cellToCheck) === color) {
-      winningCells.push(cellToCheck);
-      rowToCheck--;
-      colToCheck--;
-    } else {
-      break;
-    }
-  }
-  rowToCheck = rowIndex + 1;
-  colToCheck = colIndex + 1;
-  while (colToCheck <= 6 && rowToCheck <= 5) {
-    const cellToCheck = rows[rowToCheck][colToCheck];
-    if (getColorOfCell(cellToCheck) === color) {
-      winningCells.push(cellToCheck);
-      rowToCheck++;
-      colToCheck++;
-    } else {
-      break;
-    }
-  }
-  isWinningCombo = checkWinningCells(winningCells);
-  if (isWinningCombo) return;
-
-  // Check to see if we have a tie
-  const rowsWithoutTop = rows.slice(0, 6);
-  for (const row of rowsWithoutTop) {
-    for (const cell of row) {
-      const classList = getClassListArray(cell);
-      if (!classList.includes('yellow') && !classList.includes('red')) {
-        return;
-      }
-    }
-  }
-
-  gameIsLive = false;
-  statusSpan.textContent = "Game is a tie!";
-};
+let mainMenu =  document.querySelector('.mainMenu');
+let gameScreen =  document.querySelector('.gameScreen');
+let rightArrow = document.querySelector('#rightArrow');
+let leftArrow = document.querySelector('#leftArrow');
+let nombreTurno = document.querySelector('.nombreTurno');
+const startTimer = 60; 
+let sec = startTimer;
+let n;
+let nRows = n + 1;
 
 
 
-// Event Handlers
-const handleCellMouseOver = (e) => {
-  if (!gameIsLive) return;
-  const cell = e.target;
-  const [rowIndex, colIndex] = getCellLocation(cell);
+function startGame(){
+  let numberToWin = document.querySelector('#numberToWin').value;
 
-  const topCell = topCells[colIndex];
-  topCell.classList.add(yellowIsNext ? 'yellow' : 'red');
-};
+  let player1Name = document.querySelector('#player1Name').value;
+  let skinPlayer1 = document.querySelector('#player1Skin').value;
+  
+  let player2Name = document.querySelector('#player2Name').value;
+  let skinPlayer2 = document.querySelector('#player2Skin').value;
 
-const handleCellMouseOut = (e) => {
-  const cell = e.target;
-  const [rowIndex, colIndex] = getCellLocation(cell);
-  clearColorFromTop(colIndex);
-};
-
-const handleCellClick = (e) => {
-  if (!gameIsLive) return;
-  const cell = e.target;
-  const [rowIndex, colIndex] = getCellLocation(cell);
-
-  const openCell = getFirstOpenCellForColumn(colIndex);
-
-  if (!openCell) return;
-
-  openCell.classList.add(yellowIsNext ? 'yellow' : 'red');
-  checkStatusOfGame(openCell);
-
-  yellowIsNext = !yellowIsNext;
-  clearColorFromTop(colIndex);
-  if (gameIsLive) {
-    const topCell = topCells[colIndex];
-    topCell.classList.add(yellowIsNext ? 'yellow' : 'red');
-  }
-};
-
-
-
-
-// Adding Event Listeners
-for (const row of rows) {
-  for (const cell of row) {
-    cell.addEventListener('mouseover', handleCellMouseOver);
-    cell.addEventListener('mouseout', handleCellMouseOut);
-    cell.addEventListener('click', handleCellClick);
+  if(skinAreDifferent(skinPlayer1, skinPlayer2)){
+    mainMenu.style.display = 'none';
+    gameScreen.style.display = 'block';
+    console.log(numberToWin);
+    loadGame(player1Name, skinPlayer1, player2Name, skinPlayer2, numberToWin);
+  }else{
+    alert('Las fichas deben ser diferentes');
   }
 }
 
-resetButton.addEventListener('click', () => {
-  for (const row of rows) {
-    for (const cell of row) {
-      cell.classList.remove('red');
-      cell.classList.remove('yellow');
-      cell.classList.remove('win');
-    }
+function skinAreDifferent(skinPlayer1, skinPlayer2){
+  return skinPlayer1 != skinPlayer2;
+}
+
+
+function loadGame(player1Name, skinPlayer1, player2Name, skinPlayer2, numberToWin) {
+  let canvas = document.getElementById("canvas");
+  var ctx = canvas.getContext('2d');
+  let boardW, boardH, boardArray, squareSize, color, canvasSize, playerTurn, countTurn, endGame, jugando, imgDrag;
+
+  let tablero = 'imagenes/tablero1.png';
+  let fichaAmarilla = 'imagenes/fichaAmarilla.png';
+  let fichaRoja = 'imagenes/fichaRoja.png';
+  let fichaAzul = 'imagenes/fichaAzul.png';
+  let fichaVerde = 'imagenes/fichaVerde.png';
+  let fichaVioleta = 'imagenes/fichaVioleta.png';
+  let fichaCookie = 'imagenes/fichaCookie.png';
+  let fichaFutbol =  'imagenes/fichaFutbol.png';
+  let fichaHalloween = 'imagenes/fichaHalloween.png';
+  let fichaSanta = 'imagenes/fichaSanta.png';
+
+  let fichaSkinJugador1;
+  let fichaSkinJugador2;
+
+  if(skinPlayer1 == "yellow1"){
+    fichaSkinJugador1 = fichaAmarilla;
+  }else if(skinPlayer1 == "red1"){
+    fichaSkinJugador1 = fichaRoja;
+  }else if(skinPlayer1 == "blue1"){
+    fichaSkinJugador1 = fichaAzul;
+  }else if(skinPlayer1 == "green1"){
+    fichaSkinJugador1 = fichaVerde;
+  }else if(skinPlayer1 == "violet1"){
+    fichaSkinJugador1 = fichaVioleta;
+  }else if(skinPlayer1 == "cookie1"){
+    fichaSkinJugador1 = fichaCookie;
+  }else if(skinPlayer1 == "football1"){
+    fichaSkinJugador1 = fichaFutbol;
+  }else if(skinPlayer1 == "halloween1"){
+    fichaSkinJugador1 = fichaHalloween;
+  }else{
+    fichaSkinJugador1 = fichaSanta;
   }
-  gameIsLive = true;
-  yellowIsNext = true;
-  statusSpan.textContent = '';
-});
+
+  if(skinPlayer2 == "yellow2"){
+    fichaSkinJugador2 = fichaAmarilla;
+  }else if(skinPlayer2 == "red2"){
+    fichaSkinJugador2 = fichaRoja;
+  }else if(skinPlayer2 == "blue2"){
+    fichaSkinJugador2 = fichaAzul;
+  }else if(skinPlayer2 == "green2"){
+    fichaSkinJugador2 = fichaVerde;
+  }else if(skinPlayer2 == "violet2"){
+    fichaSkinJugador2 = fichaVioleta;
+  }else if(skinPlayer2 == "cookie2"){
+    fichaSkinJugador2 = fichaCookie;
+  }else if(skinPlayer2 == "football2"){
+    fichaSkinJugador2 = fichaFutbol;
+  }else if(skinPlayer2 == "halloween2"){
+    fichaSkinJugador2 = fichaHalloween;
+  }else{
+    fichaSkinJugador2 = fichaSanta;
+  }
+ 
+
+  let timer = document.querySelector('#timer');
+
+  //Inicio de juego
+  sec = startTimer;
+  cntDown();
+  setUp();
+  draw();
+  eventosJugador();
+
+
+
+  //FUNCTIONS
+
+  //Configuarcion general de datos
+  function setUp() {
+      canvasSize = 700;
+      if(numberToWin == 4){
+        inRow = 4;
+        n = inRow - 1;
+        boardW = 7;
+        boardH = 6;
+      }
+      if(numberToWin == 5){
+        inRow = 5;
+        n = inRow - 1;
+        boardW = 8;
+        boardH = 7;
+      }
+      if(numberToWin == 6){
+        inRow = 6;
+        n = inRow - 1;
+        boardW = 9;
+        boardH = 8;
+      }
+      color = {
+          "player": {
+              0: "white"
+          }
+      };
+      jugando = false
+      playerTurn = 1;
+      countTurn = 0;
+      endGame = false;
+      setUpTablero();
+      setUpCanvas();
+      topText();
+      nombreTurno.innerHTML = 'Turno de ' + player1Name;
+
+  }
+
+  //Configura el tablero y la matriz
+  function setUpTablero() {
+      let image = new Image();
+      image.src = tablero;
+      image.onload = function () {
+          img = this;
+          ctx.drawImage(this, 100, 0 + squareSize, boardW * squareSize, boardH * squareSize);
+          draw();
+      }
+
+      boardArray = [];
+      for (y = 0; y < boardH; y++) {
+          let row = [];
+          for (x = 0; x < boardW; x++) {
+              row.push(0);
+          }
+          boardArray.push(row);
+      }
+
+  }
+
+  //Configura el canvas
+  function setUpCanvas() {
+      if (boardH + 1 > boardW) {
+          canvas.height = canvasSize;
+          squareSize = canvasSize / (boardH + 1);
+          canvas.width = boardW * squareSize;
+      } else {
+          canvas.width = canvasSize + 200;
+
+          squareSize = canvasSize / boardW;
+          canvas.height = (boardH + 1) * squareSize;
+      }
+
+  }
+
+  //Dibuja las fichas en la matriz el valor 0 es el fondo blanco
+  function draw() {
+      for (y = 0; y < boardH; y++) {
+          for (x = 0; x < boardW; x++) {
+              dibujarFicha(x, y + 1, boardArray[y][x]);
+          }
+      }
+      let imageFicha = new Image();
+      imageFicha.src = fichaSkinJugador1;
+      imageFicha.height = 75;
+      imageFicha.width = 75;
+      imageFicha.onload = function () {
+
+          ctx.drawImage(this, 0, 625, this.width, this.height);
+
+          imageFicha.src = fichaSkinJugador2;
+          imageFicha.onload = function () {
+
+              ctx.drawImage(this, 825, 625, this.width, this.height);
+              imgDrag = ctx.getImageData(0, 0, 900, 700);
+          }
+
+      }
+  }
+
+  //Dibuja la ficha
+  function dibujarFicha(x, y, tileColor) {
+      let img = new Image();
+      img.height = 75;
+      img.width = 75;
+      let centerX = (x * squareSize) + (squareSize / 2);
+      let centerY = (y * squareSize) + (squareSize / 2);
+
+      if ((jugando) && tileColor != 0) {
+          if (tileColor == 1) {
+              img.src = fichaSkinJugador1;
+          } else if (tileColor == 2) {
+              img.src = fichaSkinJugador2;
+          }
+          img.onload = function () {
+              ctx.drawImage(this, centerX + 62, centerY - 37, this.width, this.height);
+          }
+      }
+      if (tileColor == 0) {
+
+          let tileSize = (squareSize * 0.8) / 2;
+          ctx.fillStyle = color.player[tileColor];
+          ctx.beginPath();
+          ctx.arc(centerX + 100, centerY, tileSize, 0, 2 * Math.PI);
+          ctx.fill();
+      }
+
+
+
+  }
+
+  //Controla los movimientos del usuario
+  function eventosJugador() {
+      canvas.addEventListener("mousemove", (e) => {
+          if (jugando) {
+              let imgFicha = new Image();
+              imgFicha.height = 75;
+              imgFicha.width = 75;
+              if (playerTurn == 1) {
+                  imgFicha.src = fichaSkinJugador1;
+              } else if (playerTurn == 2) {
+                  imgFicha.src = fichaSkinJugador2;
+              }
+              let x = e.offsetX - 36;
+              let y = e.offsetY - 36;
+
+              imgFicha.onload = function () {
+                  ctx.putImageData(imgDrag, 0, 0);
+                  ctx.drawImage(this, x, y, this.width, this.height);
+              }
+          }
+                          
+          
+      })
+
+      canvas.addEventListener("mousedown", (e) => {
+          let x = e.offsetX;
+          let y = e.offsetY;
+          if ((playerTurn == 1) && (x >= 0) && (x <= 75) && (y >= 625) && (y <= 700)) {
+              jugando = true;
+
+          } else if ((playerTurn == 2) && (x >= 825) && (x <= 900) && (y >= 625) && (y <= 700)) {
+              jugando = true;
+
+          }
+      })
+
+      canvas.addEventListener("mouseup", (e) => {
+          ctx.putImageData(imgDrag, 0, 0);
+          if ((jugando) && (e.offsetX > 100) && (e.offsetX < 798) && (e.offsetY > 100) && (e.offsetY < 198)) {
+              let clickX = Math.floor((e.clientX - (canvas.offsetLeft + 100)) / squareSize)
+
+              if (!endGame) {
+                  for (y = boardH - 1; y >= 0; y--) {
+                      if (boardArray[y][clickX] == 0) {
+                          playMove(clickX, y);
+                          break;
+                      }
+                  }
+              }
+
+          }
+          jugando = false;
+
+      })
+  }
+
+  //Controla los turnos y si el juego termina en victoria o empate
+  function playMove(x, y) {
+      countTurn++
+      boardArray[y][x] = playerTurn;
+      if (checkWin()) {
+          topText("win")
+      } else if (checkTie()) {
+          topText("tie")
+      } else {
+          cambiarJugador();
+          clearTopRow();
+      }
+      draw();
+  }
+  //El squareSize es el rectangulo que esta entre el titulo y el tablero, maneja el ancho del tablero y el alto que es la division entre el tamanio del canvas(900) y la cantidad de columnas (7)
+  function clearTopRow() {
+      ctx.clearRect(0, 0, canvas.width, squareSize);
+  }
+
+  //Checkea victoria
+  function checkWin() {
+      if (winDirections()) {
+          endGame = true
+          rightArrow.style.display = 'none';
+          leftArrow.style.display = 'none';
+          reiniciar();
+          cntDown();
+          return true;  
+      }
+  }
+  //Checkea empate
+  function checkTie() {
+      if (countTurn == boardW * boardH) {
+          endGame = true;
+          return true;
+      }
+  }
+
+  //Cambia el jugador
+  function cambiarJugador() {
+      if (playerTurn == 1) {
+          rightArrow.style.display = 'inline';
+          leftArrow.style.display = 'none';
+          nombreTurno.innerHTML = 'Turno de ' + player2Name;
+          playerTurn = 2;
+      } else {
+        rightArrow.style.display = 'none';
+        leftArrow.style.display = 'inline';
+        nombreTurno.innerHTML = 'Turno de ' + player1Name;
+          playerTurn = 1;
+      }
+  }
+
+  //Titulo del juego
+  let titulo = document.querySelector('#titulo');
+  function topText(text) {
+    let winner;
+    if(playerTurn==1){
+        winner = player1Name;
+    }else{
+        winner = player2Name;
+    }
+      clearTopRow();
+      switch (text) {
+          case "win": titulo.innerHTML = 'El jugador ' + winner + ' gana!'; break;
+          case "tie": titulo.innerHTML = 'Empate!'; break;
+      };
+  }
+
+  //Checkeos de que forma gano
+  function winDirections() {
+      for (y = 0; y < boardH; y++) { //horizontal
+          for (x = 0; x < boardW - n; x++) {
+              if (boardArray[y][x] == playerTurn && boardArray[y][x + 1] == playerTurn && boardArray[y][x + 2] == playerTurn && boardArray[y][x + 3] == playerTurn) return true;
+          }
+      }
+      for (y = 0; y < boardH - n; y++) { //vertical
+          for (x = 0; x < boardW; x++) {
+              if (boardArray[y][x] == playerTurn && boardArray[y + 1][x] == playerTurn && boardArray[y + 2][x] == playerTurn && boardArray[y + 3][x] == playerTurn) return true;
+          }
+      }
+      for (y = 0; y < boardH - n; y++) { //diagonal1
+          for (x = 0; x < boardW - n; x++) {
+              if (boardArray[y][x] == playerTurn && boardArray[y + 1][x + 1] == playerTurn && boardArray[y + 2][x + 2] == playerTurn && boardArray[y + 3][x + 3] == playerTurn) return true;
+
+          }
+      }
+      for (y = n; y < boardH; y++) { //diagonal2
+          for (x = 0; x < boardW - n; x++) {
+              if (boardArray[y][x] == playerTurn && boardArray[y - 1][x + 1] == playerTurn && boardArray[y - 2][x + 2] == playerTurn && boardArray[y - 3][x + 3] == playerTurn) return true;
+          }
+      }
+      return false
+  }
+
+  function cntDown() {
+	const el = document.getElementById("timer");
+	const timer = setInterval(() => {
+		el.innerHTML = sec--;
+		if (sec < 0) clearInterval(timer);
+        if (sec < 0) {
+            alert('Se acabó el tiempo. Reiniciando juego');
+            cntDown();
+            reiniciar();
+        }
+	}, 1000);
+}
+
+  let btnReset = document.querySelector('#btn-reset');
+  function reiniciar() {
+    rightArrow.style.display = 'none';
+    leftArrow.style.display = 'inline';
+      setUp();
+      draw();
+      sec = startTimer;
+      titulo.innerHTML = 'Comienza el juego';
+  }
+  btnReset.addEventListener('click', reiniciar);
+
+}
