@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="./style-game-page.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <title>FJ - 4 en linea Nier</title>
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link href="http://fonts.cdnfonts.com/css/passero-one" rel="stylesheet">
+</head>
+<body>
+
+    
+    <ul id="navbar">
+        <li id="logo"><a href="./home.html">FiumbiJuegos</a></li>
+        <li class="profileNavbar"><a href="./profile.html">
+            <img src="./images/profileImage.png" id="profileImg" alt=""></a></li>
+        <li class="hamburgerNavbar">
+          <input type="checkbox" id="menyAvPaa">
+          <label id="burger" for="menyAvPaa">
+            <div></div>
+            <div></div>
+            <div></div>
+          </label>
+          <div id="meny">
+            <a href="" style="padding-top: 20%;">Acción</a>
+            <a href="">Deportes</a>
+            <a href="">Aventura</a>
+            <a href="">Arcade</a>
+            <a href="">Estrategia</a>
+            <a href="">Musicales</a>
+            <a href="">MMO</a>
+            <a href="">Suspenso</a>
+            <a href="">Casuales</a>
+            <a href="">Automoviles</a>
+            <a href="">Historia</a>
+            <a href="">Policiales</a>
+          </div>
+        </li>
+      </ul>
+    
+
+    <nav class="breadcrumb">
+            <a href="./home.html">Home</a>
+            <a href="#">>Juegos de mesa</a>
+            <a class="unavailable" href="#">>Nier: Automata 4 en linea</a>
+    </nav>
+
+    
+
+    <h3 class="game-player-title">Nier: Automata ™  4 en linea</h3>
+    <!-- -------------------------------------------------------------------------------------------------- -->
+    <!-- <div class="game-player"> -->
+  <div style="background-image:url(./imagenes/menuBackground.jpg); background-repeat: no-repeat; background-size: cover;  text-align: center; "> 
+        
+    <div class="mainMenu" style="text-align:center; background-color: grey; margin: 50px;">
+        <h2>Menú</h2> 
+        Fichas para ganar
+        <select id="numberToWin">
+            <option value="4"> ● 4</option>
+            <option value="5"> ● 5</option>
+            <option value="6"> ● 6</option>
+        </select> 
+        <br><br>
+        Jugador 1
+        <input type="text" id="player1Name">
+        <select id="player1Skin">
+            <option value="red1"> 🔴 Rojo</option>
+            <option value="violet1" selected> 🟣 Violeta</option>
+            <option value="green1"> 🟢 Verde</option>
+            <option value="yellow1"> 🟡 Amarillo</option>
+            <option value="blue1"> 🔵 Azul</option>
+            <option value="halloween1"> 🎃 Halloween</option>
+            <option value="football1"> ⚽ Futbol</option>
+            <option value="cookie1"> 🍪 Galleta</option>
+            <option value="santa1"> 🎅 Santa</option>
+        </select> 
+        <br><br>
+        Jugador 2
+        <input type="text" id="player2Name">
+        <select id="player2Skin">
+            <option value="red2"> 🔴 Rojo</option>
+            <option value="violet2"> 🟣 Violeta</option>
+            <option value="green2"> 🟢 Verde</option>
+            <option value="yellow2"> 🟡 Amarillo</option>
+            <option value="blue2"> 🔵 Azul</option>
+            <option value="halloween2"> 🎃 Halloween</option>
+            <option value="football2"> ⚽ Futbol</option>
+            <option value="cookie2"> 🍪 Galleta</option>
+            <option value="santa2"> 🎅 Santa</option>
+        </select> 
+        <br><br>
+        <button class="gameButton" onclick="startGame()">JUGAR</button>
+    </div>
+
+    <div class="gameScreen" style="display: none;">
+        <h1 id="titulo" style="color: white;">Comienza el juego</h1>
+        <button class="gameButton" onClick="window.location.reload();">🡠 MENÚ</button>
+        <button class="gameButton" type="button" id="btn-reset">REINICIAR JUEGO</button>
+        <h1 style="color: green; font-size: 70px; font-family: 'Courier New', Courier, monospace;" id="timer">---</h1>
+
+    <canvas id="canvas" width="900" height="600"></canvas>
+    <div style="display: flex; justify-content: center;">
+        <img id="leftArrow" src="./imagenes/leftArrow.png" alt="" style="height: 100px;">
+        <img id="rightArrow" src="./imagenes/rightArrow.png" alt="" style="height: 100px; display: none;">
+    </div>
+    <div style="display: flex; justify-content: center; width: 100%;  background-color: #1E90FF;">
+        
+    
+        
+        <h1 style="display: inline-block;color: ghostwhite; font-family: 'Courier New', Courier, monospace;" class="nombreTurno"></h1>
+    
+    </div>   
+    
+    </div>
+
+
+
+
+    </div>
+    <!-- -------------------------------------------------------------------------------------------------- -->
+
+    <section class="game-info" >
+        <div class="carrousel-info">
+            <ul class="showed-carrousel-img-box">
+                <li id="slide1">
+                    <img  src="./images/games/carro_1.jpg" alt="" class="showed-carrousel-img">
+                </li>
+                <li id="slide2">
+                    <img src="./images/games/carro_2.png" alt="" class="showed-carrousel-img">
+                </li>
+                <li id="slide3">
+                    <img src="./images/games/carro_3.png" alt="" class="showed-carrousel-img">
+                </li>
+                <li id="slide4">
+                    <img src="./images/games/carro_4.jpg" alt="" class="showed-carrousel-img">
+                </li>
+            </ul>
+            <ul class="carrousel-imgs">
+                <li class="carrousel-img-box ">
+                    <a href="#slide1">
+                        <img class="carrousel-img selected"src="./images/games/carro_1.jpg" alt="">
+                    </a>
+                </li>
+                <li class="carrousel-img-box">
+                    <a href="#slide2">
+                        <img class="carrousel-img"src="./images/games/carro_2.png" alt="">
+                    </a>
+                </li>
+                <li class="carrousel-img-box">
+                    <a href="#slide3">
+                        <img class="carrousel-img"src="./images/games/carro_3.png" alt="">
+                    </a>
+                </li>
+                <li class="carrousel-img-box">
+                    <a href="#slide4">
+                        <img class="carrousel-img"src="./images/games/carro_4.jpg" alt="">
+                    </a>
+                </li>
+            </ul> 
+        </div>
+        <article class="info-card">
+            <div class="info-img-box">
+                <img class="info-img"src="./images/games/nier-info-card.jpg" alt="">
+            </div>
+            <p>NieR: Automata tells the story of androids 2B, 9S and A2 and their battle to reclaim the machine-driven dystopia overrun by powerful machines.</p>
+            <a href="" class="original-button">Más Información</a>
+        </article>
+    </section>
+
+    <div class="bottom-box">
+        <div>    
+            <div class="instructions">
+                <p class="subtitle text-bold" >Instrucciones</p>
+                <div class="twin-boxes">
+                    <p class="subtitle">Movimientos Básicos</p>
+                    <p class="subtitle">Reglas</p>
+                </div>
+                <div class="twin-boxes">
+                    <div class="instructions-movements">    
+                        <ul>
+                            <li>P: Pausa</li>
+                            <li>M: Menú</li>
+                            <li>R:tirar ficha</li>
+                            <li>Izq: mover sección</li>
+                            <li>Der: mover selección</li>
+                        </ul>
+                    </div>
+                    <div class="instructions-rules">
+                        <p>
+                            En cada turno cada jugador coloca una ficha de su color en una columna y esta cae hasta la primera casilla disponible. 
+                            El que consigue ubicar 4 fichas del mismo color seguidas en horizontal, vertical u oblicuo gana.
+                            Si un jugador consigue alinear 3 puede retirar una ficha del oponente del tablero
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <Section class="share">
+                <p class="text-bold">¿Te gustó el juego? ¡Compártelo!</p>
+            </Section>
+
+            <section class="comments-container ">
+                <p class="text-bold">Comentarios</p>
+                <article class="comment-box">
+                    <div class="profile-pic-box">
+                        <img class="profile-pic" src="./images/games/profile-pic.jpg" alt="">
+                    </div>
+                    <div class="label-box">
+                        <p class="comment-label">Añade un comentario...</p>
+                        <div class="comment-bottom">
+                            <div class="tools-pic-box">
+                                <img class="tool-pic" src="./images/games/clip.png" alt="">
+                            </div>
+                            <button class="send-comment-button">Comentar</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="comment">
+                    <div class="profile-pic-box-comment">
+                        <img class="profile-pic" src="./images/games/comandante.jpg" alt="">
+                    </div>
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <p class="text-bold">Mee7</p>
+                            <p class="time-ago">● hace 10 días</p>
+                        </div>
+                        <div class="showed-comment-bottom">
+                            <p>Ojalá optimice para pc. Se pega unos lagazos tremendos... por suerte hay mods de la comui</p>
+                            <p class="comment-label reply-action">▲ Responder</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="comment">
+                    <div class="profile-pic-box-comment">
+                        <img class="profile-pic" src="./images/games/Gatito.jpg" alt="">
+                    </div>
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <p class="text-bold">Zutz</p>
+                            <p class="time-ago">● hace 10 días</p>
+                        </div>
+                        <div class="showed-comment-bottom">
+                            <p>primero!?? wow XD</p>
+                            <p class="comment-label reply-action">▲ Responder</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="comment">
+                    <div class="profile-pic-box-comment reply">
+                        <img class="profile-pic" src="./images/games/Gatito.jpg" alt="">
+                    </div>
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <p class="text-bold">Zutz</p>
+                            <p class="time-ago">● hace 10 días</p>
+                        </div>
+                        <div class="showed-comment-bottom">
+                            <p>Nambres!! felicidades por tu logro.!</p>
+
+                            <div class="img-reply">
+                                <img src="./images/games/comment.png" alt="">
+                            </div>
+
+                            <p class="comment-label reply-action">▲ Responder</p>
+                        </div>
+                        
+                    </div>
+                </article>
+
+                <article class="comment">
+                    <div class="profile-pic-box-comment">
+                        <img class="profile-pic" src="./images/games/goku.jpg" alt="">
+                    </div>
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <p class="text-bold">Nico</p>
+                            <p class="time-ago">● hace 12 días</p>
+                        </div>
+                        <div class="showed-comment-bottom">
+                            <p>No me gustó mucho, medio aburrido</p>
+                            <p class="comment-label reply-action">▲ Responder</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="comment">
+                    <div class="profile-pic-box-comment">
+                        <img class="profile-pic" src="./images/games/Alissa.jpg" alt="">
+                    </div>
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <p class="text-bold">Carpincholover</p>
+                            <p class="time-ago">● hace 12 días</p>
+                        </div>
+                        <div class="showed-comment-bottom">
+                            <p>No me gustó mucho, medio aburrido</p>
+                            <p class="comment-label reply-action">▲ Responder</p>
+                        </div>
+                    </div>
+                </article>
+
+
+            </section>
+
+        </div>
+    
+        <aside class="recommendation-sidebar">
+            <p class="subtitle text-bold">Otros jugadores recomiendan</p>
+            <article class="card-recommended">
+                <div class="card-image-container"> 
+                    <img class="card-image"src="./images/games/header.jpg" alt="">
+                </div>
+                <div class="card-bottom-container">
+                    <p class="text-bold ">Life is Strange Before the Storm </p>
+                    <div class="twin-boxes air-top">
+                        <p class="black-color air-top-text">$10.00</p>
+                        <button class="button-card-recommendation">Comprar</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card-recommended">
+                <div class="card-image-container"> 
+                    <img class="card-image"src="./images/games/bartender-action.jpg" alt="">
+                </div>
+                <div class="card-bottom-container">
+                    <p class="text-bold ">VA-11 HALL-A Ciberpunk Ba... </p>
+                    <div class="twin-boxes air-top">
+                        <p class="black-color air-top-text">$15.00</p>
+                        <button class="button-card-recommendation">Comprar</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card-recommended">
+                <div class="card-image-container"> 
+                    <img class="card-image"src="./images/games/stardew.jpg" alt="">
+                </div>
+                <div class="card-bottom-container">
+                    <p class="text-bold ">Stardew Valley </p>
+                    <div class="twin-boxes air-top">
+                        <p class="black-color air-top-text">$15.00</p>
+                        <button class="button-card-recommendation">Comprar</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card-recommended">
+                <div class="card-image-container"> 
+                    <img class="card-image"src="./images/games/vecter.png" alt="">
+                </div>
+                <div class="card-bottom-container">
+                    <p class="text-bold ">Vecter </p>
+                    <div class="twin-boxes air-top">
+                        <p class="black-color air-top-text">$15.00</p>
+                        <button class="button-card-recommendation">Comprar</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card-recommended">
+                <div class="card-image-container"> 
+                    <img class="card-image"src="./images/games/zomboid.jpg" alt="">
+                </div>
+                <div class="card-bottom-container">
+                    <p class="text-bold ">Project Zomboid </p>
+                    <div class="twin-boxes air-top">
+                        <p class="black-color air-top-text">$35.00</p>
+                        <button class="button-card-recommendation">Comprar</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card-recommended">
+                <div class="card-image-container"> 
+                    <img class="card-image"src="./images/games/pureya.jpg" alt="">
+                </div>
+                <div class="card-bottom-container">
+                    <p class="text-bold ">Pureya</p>
+                    <div class="twin-boxes air-top">
+                        <p class="black-color air-top-text">$5.00</p>
+                        <button class="button-card-recommendation">Comprar</button>
+                    </div>
+                </div>
+            </article>
+        </aside>
+        </section>
+    </div>
+
+    <div class="footer">
+        <!--All-->
+        <!-- <div class="firstSectionFooter"> -->
+          <!--First section-->
+          <!-- <div class="footerRow">
+            <p class="footerRowTitle">Contacto</p>
+            <p class="colorhfooter">¿Tienes preguntas?</p>
+            <p>¡Contáctanos!</p>
+            <p>contacto@fiumbijuegos.ar</p>
+            <p>¡Trabaja con nosotros!</p>
+            <p>recruit@fiumbijuegos.ar</p>
+            <p>Promociona tu juego</p>
+            <p>promo@fiumbijuegos.ar</p>
+    
+            <p class="footerRowTitle spaced">Ayuda</p>
+            <p class="colorhfooter">¿Necesitás ayuda?</p>
+            <p>¡Habla con un opereador!</p>
+            <p>operaciones@fiumbijuegos.ar</p>
+            <p>¡Apela tu cuenta!</p>
+            <p>apela@fiumbijuegos.ar</p>
+            <p>¿No se realizo tu cobro?</p>
+            <p>cobros@fiumbijuegos.ar</p>
+          </div>
+    
+          <div class="footerRow borderRow">
+            <p class="footerRowTitle">Nosotros</p>
+            <p class="colorhfooter">Visita nuestra web</p>
+            <p>www.fiumbi.com</p>
+            <a class="footerLink" href="">Centro de ayuda</a>
+            <br>
+            <a class="footerLink" href="">Privacidad</a>
+            <br>
+            <a class="footerLink" href="">Condiciones de uso</a>
+    
+            <p class="footerRowTitle spaced">Mapa</p>
+            <p class="colorhfooter">¿Te perdiste?</p>
+                                 
+            <a class="footerLink" href="./home.html">Home</a>
+            <br>
+            <a class="footerLink" href="./gamerelease.html">Realease</a>
+            <br>
+            <a class="footerLink" href="">Mi perfil</a>
+            <br>
+            <a class="footerLink" href="">Foro</a>
+            <br>
+            <a class="footerLink" href="">Configuración</a>
+          </div>
+          <div class="footerRow borderRow">
+            <p class="footerRowTitle">Síguenos</p>
+            <p class="colorhfooter">Redes sociales</p>
+            <p>¡Mantente actualizado!</p>
+            <div class="footerSocialMediaIcons">
+              <a href=""><img src="./images/social/facebook.png" alt=""></a>
+              <a href=""><img src="./images/social/twitter.png" alt=""></a>
+              <a href=""><img src="./images/social/tiktok.png" alt=""></a>
+            </div>
+            <p class="footerRowTitle spaced">Herramientas</p>
+            <p class="colorhfooter">¡Son Libres!</p>
+            <a class="footerLink" href="">FiumbiEngine</a>
+            <br>
+            <a class="footerLink" href="">FiumbiPS</a>
+            <br>
+            <a class="footerLink" href="">FiumbiCODE</a>
+            <br>
+            <a class="footerLink" href="">StackOverFiumbi</a>
+            <br>
+            <a class="footerLink" href="">FiumbiStadium</a>
+          </div>
+          <div class="footerRow borderRow">
+            <p class="footerRowTitle">Newsletter</p>
+            <p class="colorhfooter">Suscríbete</p>
+            <p>Para recibir las últimas novedades</p>
+            <form action="./home.html">
+              <input class="footerInput" type="text" placeholder="correo@correo.com"><br>
+              <button class="buttonOrange buttonSusc" onclick="suscribedAlert()">Suscribirse</button>
+            </form>
+          </div>
+        </div>
+    
+      -->
+      <div class="firstSectionFooter">
+        <!--First section-->
+        <div class="footerRow">
+          <p class="footerRowTitle">Contacto</p>
+          <p class="colorhfooter">¿Tienes preguntas?</p>
+          <p>¡Contáctanos!</p>
+          <p>contacto@fiumbijuegos.ar</p>
+          <p>¡Trabaja con nosotros!</p>
+          <p>recruit@fiumbijuegos.ar</p>
+          <p>Promociona tu juego</p>
+          <p>promo@fiumbijuegos.ar</p>
+  
+          <p class="footerRowTitle spaced">Ayuda</p>
+          <p class="colorhfooter">¿Necesitás ayuda?</p>
+          <p>¡Habla con un opereador!</p>
+          <p>operaciones@fiumbijuegos.ar</p>
+          <p>¡Apela tu cuenta!</p>
+          <p>apela@fiumbijuegos.ar</p>
+          <p>¿No se realizo tu cobro?</p>
+          <p>cobros@fiumbijuegos.ar</p>
+        </div>
+  
+        <div class="space-1"></div>
+        <div class="footer-row-box" >
+          <div class="footerRow  footer-columned" >
+            <p class="footerRowTitle">Nosotros</p>
+            <p class="colorhfooter">Visita nuestra web</p>
+            <p>www.fiumbi.com</p>
+            <a class="footerLink" href="">Centro de ayuda</a>
+            <br>
+            <a class="footerLink" href="">Privacidad</a>
+            <br>
+            <a class="footerLink" href="">Condiciones de uso</a>
+            <p class="footerRowTitle spaced">Mapa</p>
+            <p class="colorhfooter">¿Te perdiste?</p>
+                                
+            <a class="footerLink" href="./home.html">Home</a>
+            <br>
+            <a class="footerLink" href="./gamerelease.html">Realease</a>
+            <br>
+            <a class="footerLink" href="">Mi perfil</a>
+            <br>
+            <a class="footerLink" href="">Foro</a>
+            <br>
+            <a class="footerLink" href="">Configuración</a>
+  
+          </div>
+        </div>
+        <div class="space-2"></div>
+        <div class="footer-row-box" >
+          <div class="footerRow ">
+            <p class="footerRowTitle footer-columned-item" >Síguenos</p>
+            <p class="colorhfooter footer-columned-item" >Redes sociales</p>
+            <p class="footer-columned-item">¡Mantente actualizado!</p>
+            <div class="footerSocialMediaIcons footer-columned-item">
+              <a href=""><img src="./images/social/facebook.png" alt=""></a>
+              <a href=""><img src="./images/social/twitter.png" alt=""></a>
+              <a href=""><img src="./images/social/tiktok.png" alt=""></a>
+            </div>
+            <p class="footerRowTitle spaced footer-columned-item">Herramientas</p>
+            <p class="colorhfooter footer-columned-item">¡Son Libres!</p>
+            <a class="footerLink footer-columned-item" href="">FiumbiEngine</a>
+            <br>
+            <a class="footerLink footer-columned-item" href="">FiumbiPS</a>
+            <br>
+            <a class="footerLink footer-columned-item" href="">FiumbiCODE</a>
+            <br>
+            <a class="footerLink footer-columned-item" href="">StackOverFiumbi</a>
+            <br>
+            <a class="footerLink footer-columned-item" href="">FiumbiStadium</a>
+          </div>
+        </div>
+        <div class="space-2"></div>
+  
+        <div class="footerRow borderRow">
+          <p class="footerRowTitle">Newsletter</p>
+          <p class="colorhfooter">Suscríbete</p>
+          <p>Para recibir las últimas novedades</p>
+          <form action="./home.html">
+            <input class="footerInput" type="text" placeholder="correo@correo.com"><br>
+            <button class="buttonOrange buttonSusc" onclick="suscribedAlert()">Suscribirse</button>
+          </form>
+        </div>
+      </div>
+  
+      
+    
+    
+    
+        <div class="secondSectionFooter">
+          <!--Second section-->
+          <p>FIUMBIJUEGOS.COM © 2022 All rights reserved</p>
+        </div>
+      </div>
+      <script src="app.js"></script>
+
+</body>
+</html>

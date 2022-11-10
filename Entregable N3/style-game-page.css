@@ -1,0 +1,799 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* list-style: none; */
+    text-decoration: none;
+    border: none;
+    outline: none;
+    letter-spacing: 1px;
+}
+
+
+body{
+    font-family: "Inter";
+    color: #612490;
+}
+
+#navbar {
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #733E9C;
+  }
+  
+  #navbar li {
+    float: left;
+  }
+  
+  #navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    margin: 2px 30px;
+  }
+  
+  #logo{
+    font-size: 33px;
+    font-family: Passero One; 
+  }
+
+.hamburgerNavbar{
+  /* display: none; */
+  padding-bottom: 40px;
+}
+
+.profileNavbar{
+  float:right !important;
+  padding-right: 5rem; 
+  padding-top: 0.4%;
+}
+
+ #profileImg{
+    height: 2.3rem; 
+ }
+
+ #hMenu{
+    padding-top: 3px;
+ }
+
+ #meny {
+    overflow: scroll;
+    background: #733E9C;
+    width: 20rem;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    transform: translateX(50rem);
+    top: 0;
+    z-index: 100;
+    transition: 0.5s;
+  }
+  
+  #menyAvPaa {
+    display: none;
+  }
+  
+  #menyAvPaa:checked ~ #meny {
+    transform: translateX(0rem);
+  }
+  
+  #burger {
+    float:right;
+    position: absolute;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    right: 3rem;
+    top: 0.4rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #burger div {
+    width: 50px;
+    height: 3px;
+    margin-top: 7px !important;
+    background-color: white;
+    display:block;
+    transition: 0.5s;
+    z-index: 999;
+  }
+  
+  #menyAvPaa:checked ~ #burger{
+    position: fixed;
+    z-index: 9999;
+  }
+  
+  #menyAvPaa:checked ~ #burger div:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+  #menyAvPaa:checked ~ #burger div:nth-child(2) {
+    opacity: 0;
+  }
+  #menyAvPaa:checked ~ #burger div:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+  
+  #meny a {
+    float: left;
+    font-size: 1.2rem;
+    padding: 1rem;
+    display: block;
+  }
+  
+  #meny a:hover {
+   color: #612490;
+  } */
+
+
+*/
+
+
+
+body{
+    font-family: "Inter";
+    color: #612490;
+}
+
+h3{
+    font-size: 32px;
+}
+
+ul{
+    width: 100%;
+    margin-left: 20%;
+
+    /* margin-top: 0%; */
+}
+
+div.carrousel-info ul{
+    margin-left: 0%
+}
+
+ul, li{
+    list-style: none;
+}
+ 
+ul.showed-carrousel-img-box{
+    position: relative;
+}
+
+ul.showed-carrousel-img-box li{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: inherit;
+    height: inherit;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+ul.showed-carrousel-img-box li:first-child{
+    opacity: 1;
+}
+
+ul.showed-carrousel-img-box li:target{
+    opacity: 1;
+}
+.game-player{
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-bottom: 4%;
+    width: 95%;
+    height: 517px;
+    border: 5px solid black;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* grid-area: game-player; */
+}
+
+.button-play{
+    width: 74px;
+    height: 74px;
+    border-style: solid;
+    box-sizing: border-box;
+    border-width: 37px 0px 37px 74px;
+    border-color: #612490 #612490 #612490 #202020;
+
+    -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+}
+
+.breadcrumb{
+    margin-top: 0.5%;
+    margin-bottom: 3%;
+    margin-left: 2.4%;
+    font-size: 22px;
+}
+
+.game-player-title{
+    margin-left: 2.4%;
+    margin-bottom: 2%;
+    /* grid-area: game-player-title; */
+}
+
+.instructions{
+    width: 70%;
+    /* margin-left: 0.90%; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    /* background-color: aqua; */
+    /* grid-area: instructions; */
+}
+
+.instructions-movements{
+    width: 50%;
+    margin-left: 0;
+    /* background-color: #902424; */
+}
+
+.instructions-rules{
+    width: 50%;
+    margin-left: 5%;
+}
+
+.subtitle{
+    width: 100%;
+    margin: 4%;
+    margin-top: 3%;
+    margin-left: 2.4%;
+    font-size: 22px;
+}
+
+.twin-boxes{
+    display: flex;
+    flex-direction: row;
+}
+
+.rules{
+    margin-top: 1%;
+}
+
+.text-bold{
+    font-weight:bolder;
+}
+
+.black-color{
+    color: black;
+}
+
+.white-color{
+    color: white;
+}
+
+
+
+.recommendation-sidebar{
+    /* background-color: #902424; */
+    width: 85%;
+    height: 1000px;
+    /* grid-area: recommendation-sidebar; */
+   
+}
+
+.card-recommended{
+    background-color: white;
+    height: 255px;
+    margin-top: 10%;
+    border:1px solid #CBD5E1;
+}
+
+.card-recommended:hover{
+    background-color:#F1F5F9; 
+    transition: background-color 1s;
+}
+
+.card-image-container{
+    width: 100%;
+    background-color: white;
+    height: 160px;
+    
+    
+}
+
+.card-bottom-container{
+    padding: 5%;
+    margin-top: 3%;
+    /* display: flex; */
+    border: 1px #CBD5E1;
+}
+
+.card-image{
+    width: 100%;
+    height: 181.3px;
+}
+
+.air-top{
+    padding-top: 3%;
+}
+
+.air-top-text{
+    padding-top: 0.7%;
+}
+
+.button-card-recommendation{
+    background-color: #F57B13;
+    color: white;
+    padding: 1.5%;
+    margin-left: 60%;
+    border-radius: 10%;
+}
+
+.button-card-recommendation:hover{
+    background-color: #FE9A45;
+    transition: background-color 300ms;
+    color: white;
+}
+
+
+
+.share{
+    margin-left: 2.4%;
+    margin-top: 4%;
+}
+
+.comments-container{
+    margin-left: 2.4%;
+    margin-top: 2.4%;
+}
+
+.comment-box{
+    display: flex;
+    /* border: 1px lightgreen; */
+    
+    width:97%;
+    height: 148px;
+    margin-top: 1.5%;
+    margin-bottom: 3%;
+}
+
+.profile-pic-box{
+    width: 5.7%;
+}
+
+.profile-pic-box-comment{
+    width: 5%;
+}
+
+.profile-pic{
+    width: 100%;
+}
+
+.label-box{
+    border: 1px #CBD5E1 solid;
+    width: 100%;
+    margin-left: 1.5%;
+}
+
+.comment-bottom{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8.3%;
+    width: 100%;
+    border-top: 1px #CBD5E1 solid;
+    background-color: #E2E8F0;
+}
+
+.send-comment-button{
+    background-color: #F57B13;
+    color: white;
+    padding: 1%;
+    font-weight: bold;
+    /* margin-left: 70%; */
+
+}
+
+.send-comment-button:hover{
+    background-color: #FE9A45;
+    transition: background-color 300ms;
+}
+
+.tools-pic-box{
+    width: 4%;
+}
+
+.tool-pic{
+    width: 100%;
+    margin-top: 15%;
+    margin-left: 25%;
+}
+
+.comment-label{
+    margin-top: 2%;
+    margin-left: 1%;
+    color: #CBD5E1;
+}
+
+
+.reply-action{
+    margin-top: 0%;
+    margin-left: 0;;
+}
+
+.comment-header{
+    display: flex;
+}
+
+.time-ago{
+    color: #CBD5E1;
+    margin-left: 1%;
+}
+
+.comment{
+    width: 97%;
+    display: flex;
+    margin-top: 2%;
+    padding-bottom: 1%;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.reply{
+    margin-left: 6.5%;
+
+}
+
+.img-reply{
+    margin-top: 1%;
+}
+
+.comment-content{
+    width: 100%;
+    margin-left: 2%;
+}
+
+.showed-comment-bottom{
+    color: #000000;
+    
+}
+
+.game-info{
+    width: 95%;
+    margin-left: 2.5%;
+    margin-bottom: 4%;
+    margin-top: 50px;
+    display: flex;
+}
+
+.carrousel-info{
+    width: 71%;
+}
+
+.showed-carrousel-img-box{
+    width: 100%;
+    height: 482px;
+}
+
+.showed-carrousel-img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.carrousel-imgs{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 143px;
+    margin-top: 6%;
+}
+
+.carrousel-img-box{
+    width: 24%;
+    height: 143px;
+}
+
+/* .selected{
+    border-bottom: 10px #6FAC40 solid;
+} */
+
+.carrousel-img{
+    width: 100%;
+}
+
+/* <ul class="carrousel-imgs"> */
+
+ul.carrousel-imgs li:first-child img{
+    border-bottom: 10px #6FAC40 solid;
+} 
+
+ul.carrousel-imgs li:first-child img:target{
+    border-bottom: 10px #6FAC40 solid;
+}
+
+.info-card{
+    width: 25%;
+}
+
+.bottom-box{
+    display: flex;
+    width: 97%;
+    margin-left: 1.4%;
+}
+.info-card{
+    width: 30%;
+}
+.info-img-box{
+    width: 90%;
+}
+
+.info-img{
+    width: 100%;
+    margin-left: 8%;
+}
+
+article.info-card p{
+    width: 90%;
+    margin-left: 7%;
+    margin-top: 5%;
+    /* background-color: #6FAC40; */
+}
+
+article.info-card button{
+    background-color: #F57B13;
+    color: white;
+    padding: 5%;
+    width: 90%;
+    margin-top: 45%;
+    margin-left: 7%;
+    border-radius: 2%;
+    font-size: 26px;
+}
+/* .content-container{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "content recommendation-sidebar"
+        "content recomendation-sidebar"
+    ;
+} */
+/* 
+.main-container{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "game-player-title game-player-title"
+        "game-player game-player"
+        "game-info game-info"
+        "content recommendation-sidebar"
+        "content recomendation-sidebar"
+    ;
+} */
+
+
+
+.footer{
+    padding-top: 5em;
+    background-color: #733E9C;
+    padding-bottom: 0;
+    color: #E2E8F0;
+    margin-top: 50%;
+  }
+  
+  .firstSectionFooter{
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    display: flex;
+    text-align: left;
+    margin: 4em;
+    
+    /* flex-direction: column; */
+  }
+  
+  .secondSectionFooter{
+    color: #94A3B8;
+    width: 100%;
+    margin-top: 10%;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    text-align: center;
+    background-color: #612490;
+  }
+  
+  .footerRow{
+    height: 95px; /*Borrar en mobile*/
+    padding: 2%;
+    float: 25%;
+  }
+  
+  .footerRow *{
+    margin-bottom: 6px;
+  }
+  
+  .borderRow{
+    border-left: solid 1px #E2E8F0;
+  }
+  
+  .colorhfooter{
+    color: #FE9A45 !important;
+  }
+  
+  .footerRowTitle{
+    padding-top: 3vh;
+    font-size: x-large;
+  }
+  
+  .footerLink{
+    color: #E2E8F0;
+  }
+  
+  .footerLink:hover{
+    color: #612490;
+  }
+  
+  /* footer------> */
+  
+
+.footer-row-box{
+    border-left:  solid 1px #E2E8F0;
+    padding-left: 2%;
+    padding-right: 2%;
+    height: 400px;
+  }
+
+  .footerRow p{
+    padding: 0%;
+  }
+  
+  .spaced{
+    margin-top: 10%;
+  }
+  
+  /* <-----footer */
+
+
+  .buttonSusc{
+    padding: 0.7em 1.2em !important; 
+  }
+  
+  .footerSocialMediaIcons{
+    padding-top: 0.5rem;
+    text-align: center;
+    padding-right: 35px;
+  }
+  
+  .footerSocialMediaIcons img{
+    height: 30px;
+  }
+  
+  .footerInput{
+    width: 100%;
+    height:4.3vh
+  }
+  
+  .buttonOrange{
+    border-radius: 8px;
+    background-color: #F57B13;
+  }
+  
+  .buttonOrange::before{
+    background: #cf6100;
+  }
+
+  .buttonSusc{
+    float: right;
+   }
+
+   .buttonSusc{
+    padding: 0.7em 1.2em !important; 
+  }
+
+  button {
+    text-align: center !important;
+    padding: 0.8em 1.8em;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    font-size: 16px;
+    transition: .3s;
+    z-index: 1;
+    font-family: inherit;
+    color: white;
+   }
+  
+   
+   button::before {
+    content: '';
+    width: 0;
+    height: 500%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+   }
+   
+   button:hover::before {
+    width: 105%;
+   }
+   
+   button:hover {
+    color: white;
+    cursor: pointer;
+   }
+  
+  
+
+   /* Boton mas info --------------------------------------> */
+ 
+    /* <-------------------------------------- Boton mas info */
+/*  opcion 1 con sombra que no me convence del todo 
+    .original-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+        text-decoration: none;
+        color: #333333;
+        font-size: 18px;
+        border-radius: 0px;
+        width: 300px;
+        height: 60px;
+        font-weight: bold;
+        border: 2px solid #333333;
+        transition: 0.3s;
+        box-shadow: 5px 5px 0px 0px rgba(51, 51, 51, 1);
+        background-color: #ffffff;
+      }
+      
+      .original-button:hover {
+        box-shadow: 0 0 #333;
+        color: #fff;
+        background-color: #333;
+      } 
+      fin de la opcion con sombra que no me convence
+      */
+    
+.original-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  text-decoration: none;
+  color: white;
+  background-color: #F57B13 ;
+  font-size: 18px;
+  border-radius: 0px;
+  width: 85%;
+  height: 60px;
+  border-color: #F57B13;
+  border-left: 20px solid #6FAC40;
+  transition: 0.3s;
+  margin-left: 7%;
+  margin-top: 48%;
+  font-weight: bold;
+}
+
+.original-button:hover {
+  border-left-width: 1px;
+  width: 90%;
+}
+
+.gameButton{
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+  transition: 0.25s;
+  color: #ffa260;
+  
+
+}
+.gameButton:hover{
+  box-shadow: 0 0.5em 0.5em -0.4em #f77e28;
+  transform: translateY(-0.25em);
+  color: #ffa260;
+  
+}
