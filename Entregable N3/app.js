@@ -39,7 +39,9 @@ function loadGame(player1Name, skinPlayer1, player2Name, skinPlayer2, numberToWi
   var ctx = canvas.getContext('2d');
   let boardW, boardH, boardArray, squareSize, color, canvasSize, playerTurn, countTurn, endGame, jugando, imgDrag;
 
-  let tablero = 'imagenes/tablero1.png';
+  let tablero1 = 'imagenes/tablero1.png';
+  let tablero2 = 'imagenes/tablero2.png';
+  let tablero3 = 'imagenes/tablero3.png';
   let fichaAmarilla = 'imagenes/fichaAmarilla.png';
   let fichaRoja = 'imagenes/fichaRoja.png';
   let fichaAzul = 'imagenes/fichaAzul.png';
@@ -146,8 +148,19 @@ function loadGame(player1Name, skinPlayer1, player2Name, skinPlayer2, numberToWi
 
   //Configura el tablero y la matriz
   function setUpTablero() {
+
       let image = new Image();
-      image.src = tablero;
+      console.log('asdsa'+ numberToWin);
+      if(numberToWin == 4){
+        image.src = tablero1;
+      }                                                 //Settea las imagenes del tablero dependiendo de a cuantas fichas se quiere jugar
+      if(numberToWin == 5){
+        image.src = tablero2;
+      }
+      if(numberToWin == 6){
+        image.src = tablero3;
+      }
+    
       image.onload = function () {
           img = this;
           ctx.drawImage(this, 100, 0 + squareSize, boardW * squareSize, boardH * squareSize);
