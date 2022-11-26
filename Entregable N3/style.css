@@ -653,15 +653,21 @@ float: left;
   }
   .gameCard{
     width: 100%;
-    height: 70%;
+    height: 75%;
     /* background-color: red; */
   }
+
+  .gameCardDescription > h4, h5{
+    margin-top: -2%;
+  }
+
   .cardImg{
     height: 20vh;
   }
   .buttonBuy{
     float:left;
     width: 60%;
+    height: 5vh;
   }
   .footerRow{
     height: 250px;
