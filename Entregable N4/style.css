@@ -258,14 +258,33 @@ button {
   z-index: 9999;
 }
 
+@keyframes b1 {
+	100% {
+		transform: translateY(10px) rotate(45deg);
+	}
+}
+@keyframes b2 {
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes b3 {
+	100% {
+		transform: translateY(-10px) rotate(-45deg);
+	}
+}
+
 #menyAvPaa:checked ~ #burger div:nth-child(1) {
-  transform: translateY(10px) rotate(45deg);
+  animation: b1 .8s forwards;
+  /*transform: translateY(10px) rotate(45deg);*/
 }
 #menyAvPaa:checked ~ #burger div:nth-child(2) {
-  opacity: 0;
+  animation: b2 0.1s forwards;
+  /*opacity: 0;*/
 }
 #menyAvPaa:checked ~ #burger div:nth-child(3) {
-  transform: translateY(-10px) rotate(-45deg);
+  animation: b3 .8s forwards;
+  /*transform: translateY(-10px) rotate(-45deg);*/
 }
 
 #meny a {
