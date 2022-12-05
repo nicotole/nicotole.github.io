@@ -45,3 +45,16 @@ function showNext(n) {
     }
 
 }
+
+
+let title = document.querySelector('.gameReleaseH1');
+
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  if (document.documentElement.scrollTop > 80) {
+    title.classList.add("hide-title");
+  }else{
+    title.classList.remove("hide-title");
+  } 
+}
