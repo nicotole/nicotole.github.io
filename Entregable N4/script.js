@@ -144,15 +144,17 @@ prev3.addEventListener("click", function () {
 
 track3.offsetWidth - index3 * width3 < index3 * width3
 
-let nn = document.querySelector('#navbar');
 
-window.onscroll = function() {myFunction()};
-
-function myFunction() {
-  if (document.documentElement.scrollTop > 50) {
-    nn.classList.add("sticky");
-  }else{
-    nn.classList.remove("sticky");
-  } 
-}
-
+// --------------------- ej 2 entregable 4
+let container = document.querySelector("#meny");
+const toggle = document.querySelector("#menyAvPaa");
+toggle.addEventListener("click", function() {
+  console.log("click al nav menu!!! ");
+  console.log(container);
+  if (!container.classList.contains("meny--open")){
+    container.classList.add("meny--open");
+  } else {
+    container.classList.remove("meny--open");
+  }
+  
+});

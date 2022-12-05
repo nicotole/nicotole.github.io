@@ -16,40 +16,13 @@ body{
 
 
 #navbar {
-    z-index: 99999;
     width: 100%;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #733E9C;
-    transition: top 0.8s;
-    height: 60px;
   }
-
-  .sticky{
-    height: 40px !important;
-    z-index: 99999;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    transition: top 0.8s;
-    box-shadow: 0 10px 15px 0px #111;
-}
-
-.sticky #logo{
-  padding-top: 5px;
-  font-size: 23px;
-}
-
-.sticky #profileImg{
-  height: 1.8rem;
-}
-
-.sticky #burger div{
-  height: 2px;
-}
   
   #navbar li {
     float: left;
@@ -63,7 +36,7 @@ body{
   }
   
   #logo{
-    font-size: 35px;
+    font-size: 33px;
     font-family: Passero One; 
   }
 
@@ -868,4 +841,42 @@ float: left;
 
 .spaced{
   margin-top: 10%;
+}
+
+/* //-------------------- ej N°2 */
+div#meny a{
+  opacity: 0;
+}
+
+.meny--open a:nth-child(1){ animation-delay: 100ms;}
+.meny--open a:nth-child(2){ animation-delay: 200ms;}
+.meny--open a:nth-child(3){ animation-delay: 300ms;}
+.meny--open a:nth-child(4){ animation-delay: 400ms;}
+.meny--open a:nth-child(5){ animation-delay: 500ms;}
+.meny--open a:nth-child(6){ animation-delay: 600ms;}
+.meny--open a:nth-child(7){ animation-delay: 700ms;}
+.meny--open a:nth-child(8){ animation-delay: 800ms;}
+.meny--open a:nth-child(9){ animation-delay: 900ms;}
+.meny--open a:nth-child(10){ animation-delay: 1000ms;}
+.meny--open a:nth-child(11){ animation-delay: 1100ms;}
+.meny--open a:nth-child(12){ animation-delay: 1200ms;}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  75% {
+    opacity: .2;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.meny--open a{
+  animation: fadeIn cubic-bezier(.3, -0.01, .49, 1) 750ms forwards;
 }
