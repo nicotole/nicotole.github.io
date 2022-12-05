@@ -158,3 +158,16 @@ toggle.addEventListener("click", function() {
   }
   
 });
+
+
+let nn = document.querySelector('#navbar');
+
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  if (document.documentElement.scrollTop > 50) {
+    nn.classList.add("sticky");
+  }else{
+    nn.classList.remove("sticky");
+  } 
+}

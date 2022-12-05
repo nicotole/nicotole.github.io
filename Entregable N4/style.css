@@ -16,13 +16,41 @@ body{
 
 
 #navbar {
+    z-index: 99999;
     width: 100%;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #733E9C;
+    transition: top 0.8s;
+    height: 60px;
   }
+
+  .sticky{
+    height: 40px !important;
+    z-index: 99999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: top 0.8s;
+    box-shadow: 0 10px 15px 0px #111;
+}
+
+.sticky #logo{
+  padding-top: 5px;
+  font-size: 23px;
+}
+
+.sticky #profileImg{
+  height: 1.8rem;
+}
+
+.sticky #burger div{
+  height: 2px;
+}
+
   
   #navbar li {
     float: left;
@@ -36,7 +64,7 @@ body{
   }
   
   #logo{
-    font-size: 33px;
+    font-size: 35px;
     font-family: Passero One; 
   }
 
