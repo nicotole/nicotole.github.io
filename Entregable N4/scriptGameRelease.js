@@ -58,3 +58,24 @@ function myFunction() {
     title.classList.remove("hide-title");
   } 
 }
+
+// ------------------------------- ej 6
+
+let sectionOne = document.querySelector(".featuresContainer");
+let sectionTwo = document.querySelector(".secondContainer");
+
+const options = {};
+
+
+const observer = new IntersectionObserver(function(entries, observer){
+  entries.forEach(entry => {
+    console.log(entry);
+    if (entry.isIntersecting){
+      sectionOne.classList.add("gameReleaseFeaturesAction");
+    }
+  });
+}, options);
+
+observer.observe(sectionOne);
+
+

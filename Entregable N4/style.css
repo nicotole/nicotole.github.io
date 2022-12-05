@@ -941,3 +941,19 @@ div#meny a{
 .meny--open a{
   animation: fadeIn cubic-bezier(.3, -0.01, .49, 1) 750ms forwards;
 }
+
+/* ----- */
+
+@keyframes fadeInCard {
+  0% {
+    transform: translateX(100%)
+  }
+
+  100%{
+    transform: translateX(0%);
+  }
+}
+
+.gameReleaseFeaturesAction{
+  animation: fadeInCard cubic-bezier(.3, -0.01, .49, 1) 1s forwards;
+}
