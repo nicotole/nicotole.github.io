@@ -143,3 +143,15 @@ prev3.addEventListener("click", function () {
 });
 
 track3.offsetWidth - index3 * width3 < index3 * width3
+
+let nn = document.querySelector('#navbar');
+
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  if (document.documentElement.scrollTop > 50) {
+    nn.classList.add("sticky");
+  }else{
+    nn.classList.remove("sticky");
+  } 
+}
