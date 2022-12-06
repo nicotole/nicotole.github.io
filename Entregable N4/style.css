@@ -957,3 +957,25 @@ div#meny a{
 .gameReleaseFeaturesAction{
   animation: fadeInCard cubic-bezier(.3, -0.01, .49, 1) 1s forwards;
 }
+
+#sprite {
+  width:165px;
+  height:165px;
+  margin: auto;
+  background:url(./images/gamerelease/magesprite.png);
+  animation:move 6s steps(20) infinite;
+  position:relative;
+  bottom: -18px;
+  right: 30px;
+}
+
+@keyframes move {
+  0% { background-position:0;}
+  100% { background-position:-3300px; }
+}
+
+#sprite-background{
+  background-color: #111;
+  background-size:contain;
+  background-image: url(./images/gamerelease/citybackground.png);
+}
