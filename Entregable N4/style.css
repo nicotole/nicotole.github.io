@@ -459,7 +459,15 @@ button {
 .releaseContainer{
   color: #E2E8F0; 
   width: 100%;
-  height: 35rem; /*IMPORTANT*/
+  height: 35rem
+}
+
+.heighten{
+  height: 1300px;
+}
+
+.spacedParagraph{
+  margin-top: 8.5%;
 }
 
 .firstContainer{
@@ -978,4 +986,116 @@ div#meny a{
   background-color: #111;
   background-size:contain;
   background-image: url(./images/gamerelease/citybackground.png);
+}
+
+.history-section {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  top: -90px;
+  position: relative;
+}
+
+.history-section p {
+  font-size: 1.4rem;
+  margin-right: 10rem;
+}
+
+.history-section .left-section {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 0 5%;
+  z-index: 3;
+}
+
+.history-card-content {
+  width: 100%;
+  height: 400px;
+  top: 160px;
+  position: sticky;
+  display: none;
+}
+
+
+
+.history-section .left-section .history-card-content .history-card-image {
+  width: 500px;
+  height: 320px;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-history {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.history-section .right-section {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  width: 50%;
+  overflow: hidden;
+}
+
+.history-section .right-section .history-text-content {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: 0 10%;
+  height: 400px;
+
+}
+
+.fade-in {
+  animation: ease 0.9s fadeOut-history forwards;
+}
+
+.fade-in.appear {
+  animation: ease 0.9s fadeIn-history forwards;
+}
+
+.showCard {
+  display: block;
+}
+
+@keyframes fadeIn-history {
+  0% {
+      opacity: 0;
+  }
+
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes fadeOut-history {
+  0% {
+      opacity: 1;
+  }
+
+  100% {
+      opacity: 0;
+  }
+}
+
+.slide-up {
+  transform: translateY(150px);
+  transition: transform 650ms ease-in;
+  animation: ease 800ms fadeOut-history forwards;
+
+}
+
+.slide-up.appear {
+  transform: translateY(0);
+  transition: transform 650ms ease-in;
+  animation: ease 800ms fadeIn-history forwards;
+}
+
+.showContent {
+  display: block;
 }
