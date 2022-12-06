@@ -958,6 +958,36 @@ div#meny a{
   animation: fadeInCard cubic-bezier(.3, -0.01, .49, 1) 1s forwards;
 }
 
+
+
+@keyframes fadeInCards {
+  0% {
+    transform: translateX(100%) rotate3d(0, 0, 1, 0deg);
+  }
+
+  25% {
+    transform: translateX(75%) rotate3d(0, 0, 1, 90deg);
+  }
+
+  50% {
+    transform: translateX(50%) rotate3d(0, 0, 1, 180deg);
+  }
+
+  75% {
+    transform: translateX(25%) rotate3d(0, 0, 1, 270deg);
+  }
+
+  100%{
+    transform: translateX(0%) rotate3d(0, 0, 1, 360deg);
+  }
+}
+
+
+.gameReleaseCharacterAction{
+  animation: fadeInCards cubic-bezier(.3, -0.01, .49, 1) 0.5s forwards;
+}
+
+
 #sprite {
   width:165px;
   height:165px;
@@ -978,4 +1008,11 @@ div#meny a{
   background-color: #111;
   background-size:contain;
   background-image: url(./images/gamerelease/citybackground.png);
+}
+
+
+.gameCharacterDescription{
+    background: #733E9C;
+    box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.5), inset 0px 20px 150px 10px rgba(0, 0, 0, 0.25); 
+    height: 200px;
 }
